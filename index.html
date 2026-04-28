@@ -1,1046 +1,731 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SiteSnel24 — Professionele website binnen 24 uur</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Bricolage+Grotesque:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --blue: #0F52BA;
-  --blue-dark: #0A3D8F;
-  --blue-light: #E8F0FE;
-  --green: #00C875;
-  --green-dark: #00A85E;
-  --yellow: #E8B400;
-  --text: #0D1B2A;
-  --muted: #536478;
-  --white: #ffffff;
-  --bg: #F4F7FB;
-  --card: #ffffff;
-  --border: #D8E4F0;
-  --radius: 20px;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-/* ── HEADER ── */
-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 200;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5vw;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-}
-
-.logo {
-  font-family: 'Syne', sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--blue);
-  text-decoration: none;
-  letter-spacing: -0.5px;
-}
-.logo span { color: var(--green); }
-
-nav { display: flex; gap: 2rem; align-items: center; }
-nav a {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-nav a:hover { color: var(--blue); }
-
-.header-cta {
-  display: flex; align-items: center; gap: 10px;
-}
-
-.btn-wa-sm {
-  display: flex; align-items: center; gap: 8px;
-  background: #25D366;
-  color: white;
-  border-radius: 50px;
-  padding: 10px 20px;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
-  box-shadow: 0 4px 16px rgba(37,211,102,0.25);
-}
-.btn-wa-sm:hover { background: var(--green-dark); transform: scale(1.03); }
-
-/* ── HERO ── */
-.hero {
-  padding-top: 70px;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  padding-left: 5vw;
-  padding-right: 5vw;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, #E8F4FF 0%, #F4F7FB 50%, #E8FFF4 100%);
-  z-index: 0;
-}
-
-.hero-orb-1 {
-  position: absolute;
-  width: 500px; height: 500px;
-  left: -150px; top: 10%;
-  background: radial-gradient(circle, rgba(15,82,186,0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: drift 8s ease-in-out infinite alternate;
-}
-
-.hero-orb-2 {
-  position: absolute;
-  width: 400px; height: 400px;
-  right: -100px; bottom: 10%;
-  background: radial-gradient(circle, rgba(0,200,117,0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: drift 10s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes drift {
-  from { transform: translate(0, 0); }
-  to   { transform: translate(30px, 20px); }
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 780px;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  padding: 8px 18px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--blue);
-  margin-bottom: 1.75rem;
-  box-shadow: 0 4px 20px rgba(15,82,186,0.08);
-  animation: fadeUp 0.6s ease both;
-}
-
-.pulse-dot {
-  width: 8px; height: 8px;
-  background: var(--green);
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%,100% { opacity:1; transform:scale(1); }
-  50% { opacity:0.4; transform:scale(1.5); }
-}
-
-.hero h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(2.8rem, 7vw, 5rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -2px;
-  color: var(--text);
-  margin-bottom: 1.25rem;
-  animation: fadeUp 0.6s 0.1s ease both;
-}
-
-.hero h1 .accent { color: var(--blue); }
-.hero h1 .green { color: var(--green-dark); }
-
-.hero-sub {
-  font-size: 18px;
-  color: var(--muted);
-  line-height: 1.7;
-  max-width: 560px;
-  margin: 0 auto 2.5rem;
-  animation: fadeUp 0.6s 0.2s ease both;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 3.5rem;
-  animation: fadeUp 0.6s 0.3s ease both;
-}
-
-.btn-primary {
-  display: flex; align-items: center; gap: 10px;
-  background: var(--blue);
-  color: white;
-  border-radius: 50px;
-  padding: 16px 32px;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 8px 32px rgba(15,82,186,0.28);
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-}
-.btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(15,82,186,0.38); }
-
-.btn-secondary {
-  display: flex; align-items: center; gap: 10px;
-  background: white;
-  color: var(--text);
-  border: 1.5px solid var(--border);
-  border-radius: 50px;
-  padding: 16px 32px;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
-}
-.btn-secondary:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-
-.hero-stats {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-  animation: fadeUp 0.6s 0.4s ease both;
-}
-
-.stat { text-align: center; }
-.stat-n {
-  font-family: 'Syne', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--blue);
-  line-height: 1;
-}
-.stat-l { font-size: 12px; font-weight: 600; color: var(--muted); margin-top: 3px; }
-
-/* ── CHECKER SECTIE ── */
-.checker-section {
-  background: white;
-  padding: 5rem 5vw;
-}
-
-.section-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--green-dark);
-  margin-bottom: 0.75rem;
-}
-
-.section-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
-  font-weight: 800;
-  color: var(--text);
-  letter-spacing: -1px;
-  line-height: 1.15;
-  margin-bottom: 0.75rem;
-}
-
-.section-sub {
-  font-size: 16px;
-  color: var(--muted);
-  max-width: 520px;
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
-}
-
-.checker-box {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem;
-  max-width: 700px;
-}
-
-.input-row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 1.25rem;
-}
-
-.domain-input {
-  flex: 1;
-  min-width: 200px;
-  background: white;
-  border: 1.5px solid var(--border);
-  border-radius: 14px;
-  padding: 14px 18px;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text);
-  font-family: 'Bricolage Grotesque', sans-serif;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.domain-input::placeholder { color: #aab; font-weight: 400; }
-.domain-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(15,82,186,0.08); }
-
-.ext-select {
-  background: white;
-  border: 1.5px solid var(--border);
-  border-radius: 14px;
-  padding: 14px 18px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text);
-  font-family: 'Bricolage Grotesque', sans-serif;
-  outline: none;
-  cursor: pointer;
-}
-
-.check-btn {
-  background: linear-gradient(135deg, var(--blue), #1976D2);
-  color: white;
-  border: none;
-  border-radius: 14px;
-  padding: 14px 28px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  transition: opacity 0.2s, transform 0.15s;
-  white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(15,82,186,0.2);
-}
-.check-btn:hover { opacity: 0.9; transform: scale(1.02); }
-.check-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-
-.ext-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.75rem; }
-.ext-tag {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 6px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--muted);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.ext-tag:hover { background: var(--blue-light); border-color: rgba(15,82,186,0.3); color: var(--blue); }
-
-.result {
-  display: none;
-  border-radius: 14px;
-  padding: 1.25rem 1.5rem;
-  margin-top: 1rem;
-}
-.result.vrij { background: rgba(0,200,117,0.08); border: 1px solid rgba(0,200,117,0.3); }
-.result.bezet { background: rgba(220,50,50,0.07); border: 1px solid rgba(220,50,50,0.25); }
-.result.laden { background: var(--bg); border: 1px solid var(--border); }
-
-.result-icon { font-size: 22px; margin-bottom: 5px; }
-.result-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-.result.vrij .result-title { color: var(--green-dark); }
-.result.bezet .result-title { color: #e03333; }
-.result.laden .result-title { color: var(--muted); }
-.result-sub { font-size: 14px; color: var(--muted); line-height: 1.6; }
-
-/* ── DIENSTEN ── */
-.diensten { padding: 5rem 5vw; background: var(--bg); }
-
-.diensten-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
-}
-
-.dienst-card {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-
-.dienst-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--blue), var(--green));
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.dienst-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(15,82,186,0.1); }
-.dienst-card:hover::before { opacity: 1; }
-
-.dienst-icon {
-  width: 52px; height: 52px;
-  background: var(--blue-light);
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px;
-  margin-bottom: 1.25rem;
-}
-
-.dienst-naam {
-  font-family: 'Syne', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.dienst-prijs {
-  display: inline-block;
-  background: var(--blue-light);
-  color: var(--blue);
-  font-size: 13px;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 50px;
-  margin-bottom: 10px;
-}
-
-.dienst-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
-
-/* ── WERKWIJZE ── */
-.werkwijze { padding: 5rem 5vw; background: white; }
-
-.stappen {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.stap {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.stap-num {
-  width: 50px; height: 50px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--blue), #1976D2);
-  color: white;
-  font-family: 'Syne', sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 8px 24px rgba(15,82,186,0.2);
-}
-
-.stap h3 {
-  font-family: 'Syne', sans-serif;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.stap p { font-size: 14px; color: var(--muted); line-height: 1.65; }
-
-/* ── OVER MIJ ── */
-.over-mij {
-  padding: 5rem 5vw;
-  background: var(--bg);
-}
-
-.over-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.over-visual {
-  background: linear-gradient(135deg, var(--blue-dark), var(--blue), #1565C0);
-  border-radius: 28px;
-  padding: 3rem 2.5rem;
-  color: white;
-  text-align: center;
-  box-shadow: 0 24px 64px rgba(15,82,186,0.2);
-}
-
-.avatar {
-  width: 90px; height: 90px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 40px;
-  margin: 0 auto 1.25rem;
-  border: 3px solid rgba(255,255,255,0.3);
-}
-
-.over-naam {
-  font-family: 'Syne', sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 6px;
-}
-
-.over-titel { font-size: 14px; opacity: 0.75; margin-bottom: 1.5rem; }
-
-.over-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-.pill {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 50px;
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.over-tekst h2 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 800;
-  color: var(--text);
-  letter-spacing: -1px;
-  margin-bottom: 1.25rem;
-  line-height: 1.2;
-}
-
-.over-tekst p {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-.usps { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 10px; }
-.usps li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text);
-}
-.usps li::before {
-  content: '✓';
-  width: 28px; height: 28px;
-  background: rgba(0,200,117,0.12);
-  color: var(--green-dark);
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px;
-  font-weight: 800;
-  flex-shrink: 0;
-}
-
-/* ── CTA ── */
-.cta {
-  padding: 6rem 5vw;
-  background: linear-gradient(135deg, #0A3D8F 0%, #0F52BA 50%, #006B5E 100%);
-  color: white;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-  pointer-events: none;
-}
-
-.cta h2 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.cta p {
-  font-size: 17px;
-  opacity: 0.82;
-  max-width: 500px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.7;
-  position: relative;
-}
-
-.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
-
-.btn-white {
-  display: flex; align-items: center; gap: 10px;
-  background: white;
-  color: var(--blue);
-  border-radius: 50px;
-  padding: 16px 32px;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn-white:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,0.2); }
-
-.btn-wa-lg {
-  display: flex; align-items: center; gap: 10px;
-  background: #25D366;
-  color: white;
-  border-radius: 50px;
-  padding: 16px 32px;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 8px 32px rgba(37,211,102,0.3);
-  transition: transform 0.2s, background 0.2s;
-}
-.btn-wa-lg:hover { transform: translateY(-2px); background: var(--green-dark); }
-
-/* ── PRIVACY & FOOTER ── */
-.privacy-section {
-  padding: 4rem 5vw;
-  background: white;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.privacy-section h2 {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-}
-
-.privacy-section h2:first-child { margin-top: 0; }
-
-.privacy-section p {
-  font-size: 15px;
-  color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-footer {
-  background: var(--text);
-  padding: 3rem 5vw 2rem;
-  color: rgba(255,255,255,0.5);
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding-bottom: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.footer-logo {
-  font-family: 'Syne', sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  color: white;
-  text-decoration: none;
-}
-.footer-logo span { color: var(--green); }
-
-.footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.footer-links a {
-  font-size: 13px;
-  color: rgba(255,255,255,0.45);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-links a:hover { color: white; }
-
-.footer-bottom { font-size: 13px; text-align: center; }
-
-/* ── COOKIE BANNER ── */
-.cookie-banner {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: var(--text);
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  z-index: 999;
-}
-.cookie-text { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; flex: 1; min-width: 200px; }
-.cookie-text a { color: var(--yellow); text-decoration: underline; }
-.cookie-btn {
-  background: var(--blue);
-  color: white;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  white-space: nowrap;
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 768px) {
-  nav { display: none; }
-  .hero h1 { letter-spacing: -1px; }
-  .hero-stats { gap: 1.5rem; }
-  .over-grid { grid-template-columns: 1fr; }
-  .over-visual { display: none; }
-  .footer-inner { flex-direction: column; text-align: center; }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SiteSnel24 – Professionele website voor zzp'ers & mkb | €150 eerste jaar alles inbegrepen</title>
+  <meta name="description" content="Binnen 5 werkdagen een snelle, professionele website voor zzp'ers en mkb. €150 eerste jaar alles inbegrepen: ontwerp, hosting, domein & SSL." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-bg: #f9f8f5;
+      --c-white: #ffffff;
+      --c-ink: #1a1a2e;
+      --c-ink-soft: #4a4a6a;
+      --c-accent: #2563eb;
+      --c-accent-light: #dbeafe;
+      --c-accent-dark: #1d4ed8;
+      --c-green: #16a34a;
+      --c-green-light: #dcfce7;
+      --c-border: #e5e4e0;
+      --c-surface: #ffffff;
+      --r: 12px;
+      --font: 'Bricolage Grotesque', sans-serif;
+      --shadow: 0 2px 16px rgba(26,26,46,0.08);
+      --shadow-lg: 0 8px 40px rgba(26,26,46,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--c-bg);
+      color: var(--c-ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(249,248,245,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border);
+      padding: 0 clamp(1rem, 5vw, 3rem);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-size: 1.25rem; font-weight: 700; color: var(--c-ink);
+      text-decoration: none; letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--c-accent); }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav a { text-decoration: none; color: var(--c-ink-soft); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--c-accent); }
+    .nav-cta {
+      background: var(--c-accent); color: #fff !important;
+      padding: 0.5rem 1.2rem; border-radius: 8px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--c-accent-dark) !important; color: #fff !important; }
+
+    /* HERO */
+    .hero {
+      max-width: 1100px; margin: 0 auto;
+      padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 5vw, 3rem) clamp(3rem, 8vw, 6rem);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    @media (max-width: 768px) { .hero { grid-template-columns: 1fr; gap: 2rem; } }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--c-green-light); color: var(--c-green);
+      font-size: 0.8rem; font-weight: 600; padding: 0.35rem 0.85rem;
+      border-radius: 999px; margin-bottom: 1.25rem;
+    }
+    .hero-badge::before { content: "●"; font-size: 0.6rem; }
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800;
+      line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.25rem;
+    }
+    h1 em { font-style: normal; color: var(--c-accent); }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--c-ink-soft); margin-bottom: 2rem; max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.8rem; border-radius: 10px;
+      font-family: var(--font); font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; cursor: pointer; border: none; transition: all 0.2s;
+    }
+    .btn-primary { background: var(--c-accent); color: #fff; }
+    .btn-primary:hover { background: var(--c-accent-dark); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(37,99,235,0.3); }
+    .btn-secondary { background: var(--c-white); color: var(--c-ink); border: 1.5px solid var(--c-border); }
+    .btn-secondary:hover { border-color: var(--c-accent); color: var(--c-accent); }
+
+    .hero-trust { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+    .trust-item { font-size: 0.8rem; color: var(--c-ink-soft); display: flex; align-items: center; gap: 0.4rem; }
+    .trust-item::before { content: "✓"; color: var(--c-green); font-weight: 700; }
+
+    .hero-visual {
+      background: var(--c-white);
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--c-border);
+    }
+    .browser-bar {
+      background: #f3f2ef; padding: 0.75rem 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .d1 { background: #ff5f57; } .d2 { background: #febc2e; } .d3 { background: #28c840; }
+    .url-bar {
+      flex: 1; background: #fff; border-radius: 6px;
+      font-size: 0.75rem; color: var(--c-ink-soft);
+      padding: 0.3rem 0.75rem; border: 1px solid var(--c-border);
+    }
+    .site-preview { padding: 1.5rem; }
+    .preview-hero-block {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border-radius: 10px; padding: 1.25rem; margin-bottom: 0.75rem;
+    }
+    .preview-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .preview-sub { font-size: 0.7rem; color: var(--c-ink-soft); margin-bottom: 0.75rem; }
+    .preview-btn { background: var(--c-accent); color: #fff; border-radius: 6px; padding: 0.35rem 0.75rem; font-size: 0.7rem; font-weight: 600; display: inline-block; }
+    .preview-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
+    .preview-card { background: #f9f8f5; border-radius: 8px; padding: 0.75rem; }
+    .preview-card-icon { font-size: 1.2rem; margin-bottom: 0.3rem; }
+    .preview-card-title { font-size: 0.65rem; font-weight: 600; }
+
+    /* SECTION COMMON */
+    section { padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 3rem); }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--c-accent); margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem;
+    }
+    h2 em { font-style: normal; color: var(--c-accent); }
+    .section-sub { font-size: 1.05rem; color: var(--c-ink-soft); max-width: 560px; margin-bottom: 3rem; }
+
+    /* HOW IT WORKS */
+    .how { background: var(--c-white); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+    .step {
+      padding: 2rem; border-radius: var(--r);
+      border: 1px solid var(--c-border); position: relative;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .step:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .step-num {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: var(--c-accent-light); color: var(--c-accent);
+      font-size: 1.1rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .step-img {
+      width: 100%; height: 140px; object-fit: cover;
+      border-radius: 8px; margin-bottom: 1rem;
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+    }
+    .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .step p { font-size: 0.88rem; color: var(--c-ink-soft); }
+
+    /* DEMOS */
+    .demos-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+    }
+    .demo-card {
+      background: var(--c-white); border-radius: var(--r);
+      border: 1px solid var(--c-border); overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-decoration: none; color: inherit;
+      display: block;
+    }
+    .demo-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .demo-thumb {
+      height: 160px; display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; position: relative; overflow: hidden;
+    }
+    .demo-thumb-kapper { background: linear-gradient(135deg, #fdf4ff, #f3e8ff); }
+    .demo-thumb-schilder { background: linear-gradient(135deg, #fff7ed, #fed7aa); }
+    .demo-thumb-elektricien { background: linear-gradient(135deg, #fefce8, #fef08a); }
+    .demo-thumb-schoonmaak { background: linear-gradient(135deg, #f0fdf4, #bbf7d0); }
+    .demo-info { padding: 1.25rem; }
+    .demo-tag {
+      font-size: 0.72rem; font-weight: 700; color: var(--c-accent);
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem;
+    }
+    .demo-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .demo-info p { font-size: 0.83rem; color: var(--c-ink-soft); }
+    .demo-link { font-size: 0.82rem; color: var(--c-accent); font-weight: 600; margin-top: 0.75rem; display: flex; align-items: center; gap: 0.3rem; }
+
+    /* PRICING */
+    .pricing { background: var(--c-ink); color: #fff; }
+    .pricing h2 { color: #fff; }
+    .pricing .section-sub { color: rgba(255,255,255,0.65); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .price-card {
+      background: rgba(255,255,255,0.06); border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 2rem; transition: border-color 0.2s;
+    }
+    .price-card.featured {
+      background: var(--c-accent); border-color: var(--c-accent);
+      position: relative; overflow: hidden;
+    }
+    .price-card.featured::before {
+      content: "Meest gekozen";
+      position: absolute; top: 1rem; right: -2.5rem;
+      background: #fff; color: var(--c-accent);
+      font-size: 0.7rem; font-weight: 800; padding: 0.3rem 3rem;
+      transform: rotate(45deg);
+    }
+    .price-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; opacity: 0.75; }
+    .price-amount {
+      font-size: 3rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .price-period { font-size: 0.85rem; opacity: 0.7; margin-bottom: 1.5rem; }
+    .price-features { list-style: none; margin-bottom: 1.75rem; }
+    .price-features li { font-size: 0.9rem; padding: 0.45rem 0; display: flex; gap: 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .price-features li:last-child { border-bottom: none; }
+    .price-features li::before { content: "✓"; font-weight: 700; flex-shrink: 0; opacity: 0.9; }
+    .btn-white { background: #fff; color: var(--c-accent) !important; }
+    .btn-white:hover { background: #f0f4ff; transform: translateY(-1px); }
+    .btn-outline-white { background: transparent; border: 1.5px solid rgba(255,255,255,0.3); color: #fff; }
+    .btn-outline-white:hover { border-color: #fff; }
+
+    .pricing-note { margin-top: 2rem; font-size: 0.83rem; color: rgba(255,255,255,0.5); text-align: center; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-info h2 { margin-bottom: 1rem; }
+    .contact-info p { color: var(--c-ink-soft); margin-bottom: 2rem; }
+    .contact-items { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .contact-icon {
+      width: 40px; height: 40px; background: var(--c-accent-light);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .contact-item-text strong { display: block; font-size: 0.85rem; margin-bottom: 0.15rem; }
+    .contact-item-text span { font-size: 0.85rem; color: var(--c-ink-soft); }
+    .contact-form {
+      background: var(--c-white); border-radius: var(--r); padding: 2rem;
+      box-shadow: var(--shadow); border: 1px solid var(--c-border);
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+    input, select, textarea {
+      width: 100%; padding: 0.75rem 1rem; border-radius: 8px;
+      border: 1.5px solid var(--c-border); font-family: var(--font);
+      font-size: 0.9rem; background: var(--c-bg);
+      transition: border-color 0.2s; outline: none;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--c-accent); background: #fff; }
+    textarea { min-height: 120px; resize: vertical; }
+
+    /* VOORWAARDEN */
+    .av { background: var(--c-white); }
+    .av-content { max-width: 760px; }
+    .av-content h3 { font-size: 1.05rem; font-weight: 700; margin: 2rem 0 0.5rem; }
+    .av-content p { font-size: 0.9rem; color: var(--c-ink-soft); margin-bottom: 0.75rem; }
+    .av-content ul { font-size: 0.9rem; color: var(--c-ink-soft); margin-left: 1.25rem; margin-bottom: 0.75rem; }
+    .av-content ul li { margin-bottom: 0.25rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--c-ink); color: rgba(255,255,255,0.7);
+      padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 5vw, 3rem) 2rem;
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+    .footer-brand .logo { color: #fff; font-size: 1.1rem; }
+    .footer-brand p { font-size: 0.85rem; margin-top: 0.75rem; line-height: 1.6; }
+    .footer-col h4 { color: #fff; font-size: 0.85rem; font-weight: 700; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.8rem; }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: #fff; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav ul { display: none; }
+    }
+
+    /* WHATSAPP */
+    .wa-float { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999; display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }
+    .wa-bubble { background: #fff; border-radius: 14px; padding: 1rem 1.1rem; box-shadow: 0 4px 28px rgba(0,0,0,0.13); max-width: 240px; font-size: 0.82rem; line-height: 1.5; color: #1a1a1a; animation: popIn 0.35s cubic-bezier(.34,1.56,.64,1); border: 1px solid #e5e5e5; position: relative; }
+    .wa-bubble strong { display: block; margin-bottom: 0.3rem; font-size: 0.88rem; color: #075e54; }
+    .wa-bubble-btn { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem; background: #25d366; color: #fff; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem; font-weight: 700; text-decoration: none; font-family: var(--font); transition: opacity 0.2s; }
+    .wa-bubble-btn:hover { opacity: 0.9; }
+    .wa-btn { background: #25d366; color: #fff; width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 22px rgba(37,211,102,0.5); text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+    .wa-btn:hover { transform: scale(1.08); box-shadow: 0 6px 30px rgba(37,211,102,0.6); }
+    .wa-btn-pulse { position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(37,211,102,0.35); animation: pulse 2s ease-out infinite; }
+    .wa-dismiss { position: absolute; top: -7px; right: -7px; width: 21px; height: 21px; background: #999; border-radius: 50%; border: none; color: #fff; font-size: 0.65rem; cursor: pointer; }
+    @keyframes popIn { from { opacity:0; transform:scale(0.8) translateY(10px); } to { opacity:1; transform:scale(1) translateY(0); } }
+    @keyframes pulse { 0% { transform:scale(1); opacity:0.6; } 100% { transform:scale(1.7); opacity:0; } }
+    .wa-hero-bar { background: #25d366; color: #fff; padding: 0.75rem clamp(1rem,5vw,3rem); text-align: center; font-size: 0.88rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .wa-hero-bar a { background: #fff; color: #16a34a; padding: 0.4rem 1.1rem; border-radius: 7px; font-weight: 800; text-decoration: none; font-size: 0.85rem; transition: opacity 0.2s; white-space: nowrap; }
+    .wa-hero-bar a:hover { opacity: 0.88; }
+    .wa-contact-block { background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 14px; padding: 1.5rem 1.75rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+    .wa-contact-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .wa-contact-text strong { display: block; font-size: 1rem; color: #065f46; margin-bottom: 0.25rem; }
+    .wa-contact-text p { font-size: 0.85rem; color: #166534; margin-bottom: 0.85rem; }
+    .wa-big-btn { background: #25d366; color: #fff; padding: 0.75rem 1.6rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem; transition: all 0.2s; font-family: var(--font); box-shadow: 0 3px 14px rgba(37,211,102,0.35); }
+    .wa-big-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+  </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <a href="#" class="logo">SiteSnel<span>24</span></a>
-  <nav>
-    <a href="#checker">Domeinchecker</a>
-    <a href="#diensten">Diensten</a>
-    <a href="#over">Over mij</a>
-    <a href="#privacy">Privacy</a>
-  </nav>
-  <div class="header-cta">
-    <a href="https://wa.me/31646950301?text=Hallo%20Ren%C3%A9%2C%20ik%20wil%20graag%20een%20website!" target="_blank" class="btn-wa-sm">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      App mij
+<!-- WHATSAPP FLOATING BUTTON -->
+<div class="wa-float">
+  <div class="wa-bubble" id="waBubble">
+    <button class="wa-dismiss" onclick="this.parentElement.style.display='none'">✕</button>
+    <strong>💬 Snel een vraag stellen?</strong>
+    App ons op WhatsApp — we antwoorden meestal binnen een uur, ook 's avonds!
+    <a href="https://wa.me/31646950301?text=Hallo%20SiteSnel24%2C%20ik%20heb%20interesse%20in%20een%20website.%20Kunnen%20jullie%20mij%20meer%20informatie%20geven%3F%20%F0%9F%9A%80" target="_blank" class="wa-bubble-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.553 4.118 1.522 5.847L0 24l6.335-1.498A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.369l-.36-.214-3.727.881.939-3.618-.235-.373A9.818 9.818 0 1112 21.818z"/></svg>
+      Stuur WhatsApp bericht
     </a>
   </div>
-</header>
+  <a href="https://wa.me/31646950301?text=Hallo%20SiteSnel24%2C%20ik%20heb%20interesse%20in%20een%20website.%20Kunnen%20jullie%20mij%20meer%20informatie%20geven%3F%20%F0%9F%9A%80" target="_blank" class="wa-btn" title="App ons op WhatsApp">
+    <div class="wa-btn-pulse"></div>
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.553 4.118 1.522 5.847L0 24l6.335-1.498A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.369l-.36-.214-3.727.881.939-3.618-.235-.373A9.818 9.818 0 1112 21.818z"/></svg>
+  </a>
+</div>
+
+<!-- WHATSAPP BAR -->
+<div class="wa-hero-bar">
+  <span>💬 Liever even appen? Wij zijn bereikbaar via WhatsApp!</span>
+  <a href="https://wa.me/31646950301?text=Hallo%20SiteSnel24%2C%20ik%20heb%20interesse%20in%20een%20website.%20Kunnen%20jullie%20mij%20meer%20informatie%20geven%3F%20%F0%9F%9A%80" target="_blank">App ons direct →</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">SiteSnel<span>24</span>.nl</a>
+    <ul>
+      <li><a href="#werkwijze">Werkwijze</a></li>
+      <li><a href="#demos">Voorbeelden</a></li>
+      <li><a href="#prijzen">Prijzen</a></li>
+      <li><a href="#voorwaarden">Voorwaarden</a></li>
+      <li><a href="#contact" class="nav-cta">Gratis offerte</a></li>
+    </ul>
+  </div>
+</nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-orb-1"></div>
-  <div class="hero-orb-2"></div>
-  <div class="hero-inner">
-    <div class="hero-badge">
-      <div class="pulse-dot"></div>
-      Beschikbaar voor nieuwe klanten
-    </div>
-    <h1>Jouw website<br><span class="accent">live</span> in <span class="green">24 uur</span></h1>
-    <p class="hero-sub">Professionele website met domein en hosting — vanaf €150. Stuur een WhatsApp en wij regelen de rest.</p>
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✦ Binnen 5 werkdagen live</div>
+    <h1>Jouw website,<br /><em>razendsnel</em> online</h1>
+    <p class="hero-sub">
+      Professionele websites voor zzp'ers en mkb. Geen technische kennis nodig. 
+      €150 eerste jaar — hosting, domein, SSL & onderhoud inbegrepen.
+    </p>
     <div class="hero-actions">
-      <a href="https://wa.me/31646950301?text=Hallo%20Ren%C3%A9%2C%20ik%20wil%20graag%20een%20website!" target="_blank" class="btn-primary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Stuur een WhatsApp
-      </a>
-      <a href="#diensten" class="btn-secondary">Bekijk diensten →</a>
+      <a href="#contact" class="btn btn-primary">Gratis offerte aanvragen →</a>
+      <a href="#demos" class="btn btn-secondary">Bekijk voorbeelden</a>
     </div>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-n">24u</div><div class="stat-l">Binnen 24 uur live</div></div>
-      <div class="stat"><div class="stat-n">€150</div><div class="stat-l">Vanaf prijs</div></div>
-      <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Klanttevredenheid</div></div>
+    <div class="hero-trust">
+      <span class="trust-item">Geen maandelijkse kosten</span>
+      <span class="trust-item">Excl. 21% btw</span>
+      <span class="trust-item">KVK geregistreerd</span>
     </div>
   </div>
-</section>
-
-<!-- DOMEIN CHECKER -->
-<section class="checker-section reveal" id="checker">
-  <div class="section-label">Gratis tool</div>
-  <div class="section-title">Is jouw domeinnaam nog vrij?</div>
-  <p class="section-sub">Check het direct — en wij registreren hem voor je als onderdeel van je website.</p>
-
-  <div class="checker-box">
-    <div class="input-row">
-      <input type="text" class="domain-input" id="domainInput" placeholder="jouwbedrijfsnaam" onkeypress="if(event.key==='Enter') checkDomain()"/>
-      <select class="ext-select" id="extSelect">
-        <option value=".nl">.nl</option>
-        <option value=".com">.com</option>
-        <option value=".eu">.eu</option>
-        <option value=".net">.net</option>
-        <option value=".online">.online</option>
-        <option value=".shop">.shop</option>
-      </select>
-      <button class="check-btn" onclick="checkDomain()" id="checkBtn">Controleer</button>
+  <div class="hero-visual">
+    <div class="browser-bar">
+      <div class="dot d1"></div>
+      <div class="dot d2"></div>
+      <div class="dot d3"></div>
+      <div class="url-bar">jouwbedrijf.nl</div>
     </div>
-
-    <div class="ext-tags">
-      <div class="ext-tag" onclick="setExt('.nl')">.nl</div>
-      <div class="ext-tag" onclick="setExt('.com')">.com</div>
-      <div class="ext-tag" onclick="setExt('.eu')">.eu</div>
-      <div class="ext-tag" onclick="setExt('.online')">.online</div>
-      <div class="ext-tag" onclick="setExt('.shop')">.shop</div>
-      <div class="ext-tag" onclick="setExt('.net')">.net</div>
-    </div>
-
-    <div class="result laden" id="result" style="display:none">
-      <div class="result-icon" id="resultIcon">⏳</div>
-      <div class="result-title" id="resultTitle">Bezig...</div>
-      <div class="result-sub" id="resultSub"></div>
-      <div id="resultCta"></div>
-    </div>
-  </div>
-</section>
-
-<!-- DIENSTEN -->
-<section class="diensten reveal" id="diensten">
-  <div class="section-label">Wat ik doe</div>
-  <div class="section-title">Alles voor jouw online aanwezigheid</div>
-  <p class="section-sub">Van domeinnaam tot live website — ik regel het allemaal voor een vaste prijs zonder verrassingen.</p>
-
-  <div class="diensten-grid">
-    <div class="dienst-card">
-      <div class="dienst-icon">🚀</div>
-      <div class="dienst-naam">Website laten maken</div>
-      <div class="dienst-prijs">Vanaf €150</div>
-      <div class="dienst-desc">Een professionele, op maat gemaakte website die er uitziet zoals jij wilt. Snel, mobiel-vriendelijk en klaar om klanten te trekken.</div>
-    </div>
-    <div class="dienst-card">
-      <div class="dienst-icon">🌐</div>
-      <div class="dienst-naam">Website + domein + hosting</div>
-      <div class="dienst-prijs">Alles-in-één</div>
-      <div class="dienst-desc">Domeinregistratie, hosting en je website — alles inbegrepen in één pakket. Eerste jaar hosting gratis. Geen gedoe.</div>
-    </div>
-    <div class="dienst-card">
-      <div class="dienst-icon">🔧</div>
-      <div class="dienst-naam">Onderhoud & updates</div>
-      <div class="dienst-prijs">Op aanvraag</div>
-      <div class="dienst-desc">Tekst aanpassen, foto's updaten, nieuwe sectie toevoegen? Stuur een WhatsApp en het is snel geregeld.</div>
-    </div>
-    <div class="dienst-card">
-      <div class="dienst-icon">🔒</div>
-      <div class="dienst-naam">SSL & beveiliging</div>
-      <div class="dienst-prijs">Standaard inbegrepen</div>
-      <div class="dienst-desc">Elk slotje in de browser is standaard inbegrepen. Veilig voor jou en je bezoekers — geen extra kosten.</div>
-    </div>
-    <div class="dienst-card">
-      <div class="dienst-icon">📱</div>
-      <div class="dienst-naam">Mobiel-vriendelijk</div>
-      <div class="dienst-prijs">Altijd inbegrepen</div>
-      <div class="dienst-desc">Elke website werkt perfect op telefoon, tablet én desktop. Jouw klanten gebruiken hun telefoon — jouw site ook.</div>
-    </div>
-    <div class="dienst-card">
-      <div class="dienst-icon">⚡</div>
-      <div class="dienst-naam">Snelle oplevering</div>
-      <div class="dienst-prijs">Binnen 24 uur</div>
-      <div class="dienst-desc">Geen weken wachten. Stuur een WhatsApp vandaag — morgen staat jouw website live. Zo simpel is het.</div>
-    </div>
-  </div>
-</section>
-
-<!-- WERKWIJZE -->
-<section class="werkwijze reveal">
-  <div class="section-label">Hoe het werkt</div>
-  <div class="section-title">In 3 stappen online</div>
-  <p class="section-sub">Geen ingewikkelde processen. Gewoon snel en duidelijk.</p>
-
-  <div class="stappen">
-    <div class="stap">
-      <div class="stap-num">1</div>
-      <h3>Stuur een WhatsApp</h3>
-      <p>Vertel me je bedrijfsnaam en wat je doet. Geen formulieren, geen gedoe — gewoon een berichtje sturen.</p>
-    </div>
-    <div class="stap">
-      <div class="stap-num">2</div>
-      <h3>Ik bouw jouw site</h3>
-      <p>Binnen 24 uur zet ik jouw website op maat in elkaar. Jij hoeft niets te doen — ik regel alles.</p>
-    </div>
-    <div class="stap">
-      <div class="stap-num">3</div>
-      <h3>Jij keurt goed & gaat live</h3>
-      <p>Je krijgt een preview. Aanpassingen? Geen probleem. Goedgekeurd? Dan zet ik hem direct live!</p>
-    </div>
-  </div>
-</section>
-
-<!-- OVER MIJ -->
-<section class="over-mij reveal" id="over">
-  <div class="over-grid">
-    <div class="over-visual">
-      <div class="avatar">👋</div>
-      <div class="over-naam">René</div>
-      <div class="over-titel">Oprichter van SiteSnel24</div>
-      <div class="over-pills">
-        <div class="pill">Web design</div>
-        <div class="pill">Snel & eerlijk</div>
-        <div class="pill">Den Haag</div>
-        <div class="pill">Persoonlijk contact</div>
+    <div class="site-preview">
+      <div class="preview-hero-block">
+        <div class="preview-title">✂️ Kapsalon De Snip</div>
+        <div class="preview-sub">Professionele kapsalon in Amsterdam · Direct online boeken</div>
+        <div class="preview-btn">Maak afspraak</div>
+      </div>
+      <div class="preview-cards">
+        <div class="preview-card"><div class="preview-card-icon">💈</div><div class="preview-card-title">Knippen & stylen</div></div>
+        <div class="preview-card"><div class="preview-card-icon">⭐</div><div class="preview-card-title">5-sterren reviews</div></div>
+        <div class="preview-card"><div class="preview-card-icon">📞</div><div class="preview-card-title">Direct contact</div></div>
       </div>
     </div>
-    <div class="over-tekst">
-      <h2>Waarom kiezen voor SiteSnel24?</h2>
-      <p>Ik ben René, en ik help ondernemers aan een professionele online aanwezigheid zonder gedoe en zonder verborgen kosten.</p>
-      <p>Geen groot bureau met lange wachttijden — gewoon een persoon die snel, netjes en eerlijk werkt. Jij WhatsAppt, ik bouw.</p>
-      <ul class="usps">
-        <li>Persoonlijk contact — rechtstreeks met de maker</li>
-        <li>Vaste prijs, geen verrassingen achteraf</li>
-        <li>Binnen 24 uur online — echt waar</li>
-        <li>Altijd bereikbaar via WhatsApp</li>
-        <li>Domein + hosting + site in één pakket</li>
-      </ul>
+  </div>
+</div>
+
+<!-- WERKWIJZE -->
+<section class="how" id="werkwijze">
+  <div class="container">
+    <div class="section-label">Werkwijze</div>
+    <h2>Van aanvraag naar <em>live website</em> in 5 stappen</h2>
+    <p class="section-sub">We nemen al het technische werk uit handen. Jij levert de informatie, wij bouwen de rest.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-img" role="img" aria-label="Contactformulier invullen">📋</div>
+        <h3>Aanvraag indienen</h3>
+        <p>Vul het contactformulier in met jouw bedrijfsnaam, branche en wensen. Geen verplichtingen.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-img" role="img" aria-label="Kennismakingsgesprek">💬</div>
+        <h3>Gratis gesprek</h3>
+        <p>We plannen een kort gesprek (telefonisch of video) om jouw wensen en stijl in kaart te brengen.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-img" role="img" aria-label="Website ontwerpen en bouwen">🎨</div>
+        <h3>Bouwen & ontwerpen</h3>
+        <p>Wij bouwen jouw website op maat: teksten, afbeeldingen, SEO-structuur en mobiele optimalisatie.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-img" role="img" aria-label="Feedback en revisie ronde">✏️</div>
+        <h3>Jouw feedback</h3>
+        <p>Je krijgt een preview. Aanpassingen zijn inbegrepen — we gaan door tot je 100% tevreden bent.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-img" role="img" aria-label="Website gaat live">🚀</div>
+        <h3>Live & klaar!</h3>
+        <p>Jouw website gaat live op jouw domein. Inclusief SSL, hosting en 1 jaar technisch onderhoud.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta reveal">
-  <h2>Klaar voor jouw website?</h2>
-  <p>Stuur een WhatsApp of bel direct. Binnen 24 uur heb jij een professionele website live staan.</p>
-  <div class="cta-btns">
-    <a href="tel:+31646950301" class="btn-white">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
-      Bel direct
-    </a>
-    <a href="https://wa.me/31646950301?text=Hallo%20Ren%C3%A9%2C%20ik%20wil%20graag%20een%20website!" target="_blank" class="btn-wa-lg">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp sturen
-    </a>
+<!-- DEMOS -->
+<section id="demos">
+  <div class="container">
+    <div class="section-label">Voorbeeldsites</div>
+    <h2>Zo ziet jouw website <em>eruit</em></h2>
+    <p class="section-sub">Bekijk onze live demo's per branche. Elke site is volledig mobiel-vriendelijk en SEO-geoptimaliseerd.</p>
+    <div class="demos-grid">
+      <a href="https://kapper.sitesnel24.nl" target="_blank" class="demo-card">
+        <div class="demo-thumb demo-thumb-kapper" role="img" aria-label="Demo website voor kapper - kapsalon website voorbeeld">✂️</div>
+        <div class="demo-info">
+          <div class="demo-tag">Kapper / Kapsalon</div>
+          <h3>Kapsalon De Snip</h3>
+          <p>Afspraken boeken, diensten tonen, reviews weergeven. Ideaal voor elke kapper.</p>
+          <div class="demo-link">Bekijk live demo →</div>
+        </div>
+      </a>
+      <a href="https://schilder.sitesnel24.nl" target="_blank" class="demo-card">
+        <div class="demo-thumb demo-thumb-schilder" role="img" aria-label="Demo website voor schilder - schilderbedrijf website voorbeeld">🖌️</div>
+        <div class="demo-info">
+          <div class="demo-tag">Schilder</div>
+          <h3>Schildersbedrijf Van Dijk</h3>
+          <p>Portfolio, offertes en werkgebied. Alles wat een schilder nodig heeft.</p>
+          <div class="demo-link">Bekijk live demo →</div>
+        </div>
+      </a>
+      <a href="https://elektricien.sitesnel24.nl" target="_blank" class="demo-card">
+        <div class="demo-thumb demo-thumb-elektricien" role="img" aria-label="Demo website voor elektricien - elektrisch installatiebedrijf website voorbeeld">⚡</div>
+        <div class="demo-info">
+          <div class="demo-tag">Elektricien</div>
+          <h3>ElektroBedrijf Jansen</h3>
+          <p>Spoed, installatie en onderhoud. Direct contact via WhatsApp knop.</p>
+          <div class="demo-link">Bekijk live demo →</div>
+        </div>
+      </a>
+      <a href="https://schoonmaak.sitesnel24.nl" target="_blank" class="demo-card">
+        <div class="demo-thumb demo-thumb-schoonmaak" role="img" aria-label="Demo website voor schoonmaakbedrijf - schoonmaak website voorbeeld">🧹</div>
+        <div class="demo-info">
+          <div class="demo-tag">Schoonmaak</div>
+          <h3>Schoon & Snel Diensten</h3>
+          <p>Diensten, tarieven en offerte aanvragen. Professioneel en betrouwbaar.</p>
+          <div class="demo-link">Bekijk live demo →</div>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- PRIVACY -->
-<div id="privacy">
-  <div class="privacy-section reveal">
-    <h2>Privacyverklaring</h2>
-    <p>SiteSnel24 (sitesnel24.nl) hecht veel waarde aan de bescherming van jouw persoonsgegevens. In deze verklaring leggen we uit welke gegevens we verzamelen en hoe we daarmee omgaan.</p>
-
-    <h2>Welke gegevens verzamelen wij?</h2>
-    <p>Wij verzamelen alleen gegevens die je zelf met ons deelt via WhatsApp of telefoon, zoals je naam, bedrijfsnaam en contactgegevens. We verzamelen geen gegevens via formulieren op deze website.</p>
-
-    <h2>Waarvoor gebruiken wij jouw gegevens?</h2>
-    <p>Jouw gegevens worden uitsluitend gebruikt om contact met je op te nemen en jouw website te bouwen. We verkopen of delen jouw gegevens nooit met derden.</p>
-
-    <h2>Cookies</h2>
-    <p>Deze website gebruikt alleen functionele cookies die nodig zijn voor het correct functioneren van de site. Er worden geen tracking- of advertentiecookies gebruikt. Je kunt cookies altijd weigeren of verwijderen via je browserinstellingen.</p>
-
-    <h2>Contact</h2>
-    <p>Heb je vragen over jouw privacy? Stuur een WhatsApp naar <a href="https://wa.me/31646950301" style="color:var(--blue);font-weight:600">+31 6 46950301</a>.</p>
+<!-- PRICING -->
+<section class="pricing" id="prijzen">
+  <div class="container">
+    <div class="section-label" style="color:rgba(255,255,255,0.5)">Transparante prijzen</div>
+    <h2>Alles inbegrepen,<br /><em style="color:#93c5fd">één eerlijke prijs</em></h2>
+    <p class="section-sub">Geen verborgen kosten. Geen verrassingen achteraf.</p>
+    <div class="pricing-grid">
+      <div class="price-card featured">
+        <div class="price-label">Eerste jaar alles inbegrepen</div>
+        <div class="price-amount">€150</div>
+        <div class="price-period">excl. 21% btw · eenmalige betaling</div>
+        <ul class="price-features">
+          <li>Professioneel website-ontwerp op maat</li>
+          <li>Domeinregistratie (1 jaar)</li>
+          <li>Webhosting (1 jaar)</li>
+          <li>SSL-certificaat (https://)</li>
+          <li>Mobiel-vriendelijk & snel</li>
+          <li>SEO-basisoptimalisatie</li>
+          <li>Google Maps integratie</li>
+          <li>Contactformulier</li>
+          <li>1 jaar technisch onderhoud</li>
+          <li>Live binnen 5 werkdagen</li>
+        </ul>
+        <a href="#contact" class="btn btn-white" style="width:100%;justify-content:center;">Nu aanvragen →</a>
+      </div>
+      <div class="price-card">
+        <div class="price-label">Na het eerste jaar</div>
+        <div class="price-amount">€59</div>
+        <div class="price-period">per jaar · excl. 21% btw</div>
+        <ul class="price-features">
+          <li>Domein verlengd</li>
+          <li>Hosting verlengd</li>
+          <li>SSL verlengd</li>
+          <li>Technisch onderhoud</li>
+          <li>Security-updates</li>
+          <li>Kleine aanpassingen inbegrepen</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline-white" style="width:100%;justify-content:center;">Meer info</a>
+      </div>
+    </div>
+    <p class="pricing-note">Alle prijzen zijn excl. 21% btw. Facturatie via e-mail. Betaling per bank of iDEAL.</p>
   </div>
-</div>
+</section>
+
+<!-- ALGEMENE VOORWAARDEN -->
+<section class="av" id="voorwaarden">
+  <div class="container">
+    <div class="section-label">Juridisch</div>
+    <h2>Algemene <em>voorwaarden</em></h2>
+    <div class="av-content">
+      <p>Versie 1.0 — april 2025. Deze algemene voorwaarden zijn van toepassing op alle opdrachten aan SiteSnel24.nl, gevestigd te Almere, Nederland (KVK: zie contact).</p>
+
+      <h3>Artikel 1 — Definities</h3>
+      <p><strong>Opdrachtnemer:</strong> SiteSnel24.nl. <strong>Opdrachtgever:</strong> de natuurlijke persoon of rechtspersoon die een opdracht verstrekt. <strong>Overeenkomst:</strong> de schriftelijke of digitale bevestiging van de opdracht.</p>
+
+      <h3>Artikel 2 — Toepasselijkheid</h3>
+      <p>Deze voorwaarden zijn van toepassing op alle offertes, overeenkomsten en leveringen van SiteSnel24.nl, tenzij schriftelijk anders overeengekomen.</p>
+
+      <h3>Artikel 3 — Aanbod en overeenkomst</h3>
+      <p>Een overeenkomst komt tot stand na schriftelijke of digitale bevestiging door opdrachtgever. Offertes zijn 30 dagen geldig. SiteSnel24.nl behoudt het recht een opdracht te weigeren zonder opgave van reden.</p>
+
+      <h3>Artikel 4 — Levering en doorlooptijd</h3>
+      <p>SiteSnel24.nl streeft naar oplevering binnen 5 werkdagen na ontvangst van alle benodigde informatie. Overschrijding van de levertermijn geeft geen recht op schadevergoeding.</p>
+
+      <h3>Artikel 5 — Prijzen en betaling</h3>
+      <ul>
+        <li>Alle prijzen zijn excl. 21% btw, tenzij anders vermeld.</li>
+        <li>Betaling dient te geschieden binnen 14 dagen na factuurdatum.</li>
+        <li>Bij niet-tijdige betaling is opdrachtgever de wettelijke rente verschuldigd.</li>
+        <li>De website gaat pas live na volledige betaling.</li>
+      </ul>
+
+      <h3>Artikel 6 — Inhoud en materiaal</h3>
+      <p>Opdrachtgever is verantwoordelijk voor de aanlevering van juiste en rechtmatige content (teksten, afbeeldingen, logo's). SiteSnel24.nl is niet aansprakelijk voor schade voortkomend uit onjuiste of onrechtmatige content.</p>
+
+      <h3>Artikel 7 — Revisies</h3>
+      <p>In de overeenkomst zijn één ronde van revisies inbegrepen. Aanvullende revisies worden tegen een uurtarief van €75 excl. btw in rekening gebracht.</p>
+
+      <h3>Artikel 8 — Eigendom en licentie</h3>
+      <p>Na volledige betaling draagt SiteSnel24.nl alle rechten op de geleverde website over aan opdrachtgever. SiteSnel24.nl behoudt het recht de website te gebruiken als referentie/portfolio, tenzij opdrachtgever hier schriftelijk bezwaar tegen maakt.</p>
+
+      <h3>Artikel 9 — Hosting en domein</h3>
+      <p>Hosting en domein zijn inbegrepen gedurende het eerste jaar. Na het eerste jaar geldt een jaarlijks verlengtarief van €59 excl. btw. SiteSnel24.nl behoudt het recht de site offline te halen bij niet-betaling na aanmaning.</p>
+
+      <h3>Artikel 10 — Aansprakelijkheid</h3>
+      <p>De aansprakelijkheid van SiteSnel24.nl is beperkt tot het factuurbedrag van de betreffende opdracht. SiteSnel24.nl is niet aansprakelijk voor indirecte schade, gederfde winst of gevolgschade.</p>
+
+      <h3>Artikel 11 — Privacy</h3>
+      <p>SiteSnel24.nl verwerkt persoonsgegevens conform de Algemene Verordening Gegevensbescherming (AVG). Gegevens worden niet aan derden verstrekt zonder toestemming, tenzij wettelijk verplicht.</p>
+
+      <h3>Artikel 12 — Toepasselijk recht</h3>
+      <p>Op alle overeenkomsten is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in het arrondissement Midden-Nederland.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="wa-contact-block">
+      <div class="wa-contact-icon">💬</div>
+      <div class="wa-contact-text">
+        <strong>Liever even appen? Dat kan!</strong>
+        <p>Stuur ons een WhatsApp-bericht — we antwoorden meestal binnen een uur. Het bericht staat al voor je klaar!</p>
+        <a href="https://wa.me/31646950301?text=Hallo%20SiteSnel24%2C%20ik%20wil%20graag%20een%20website%20laten%20maken.%20Kunnen%20jullie%20mij%20een%20offerte%20sturen%3F%20%F0%9F%9A%80" target="_blank" class="wa-big-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.553 4.118 1.522 5.847L0 24l6.335-1.498A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.369l-.36-.214-3.727.881.939-3.618-.235-.373A9.818 9.818 0 1112 21.818z"/></svg>
+          🚀 Ik wil een website laten maken!
+        </a>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Contact</div>
+        <h2>Klaar voor jouw <em>nieuwe website?</em></h2>
+        <p>Vul het formulier in en we nemen binnen 1 werkdag contact op voor een gratis kennismakingsgesprek. Geen verplichtingen.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div class="contact-item-text">
+              <strong>WhatsApp</strong>
+              <span><a href="https://wa.me/31646950301" target="_blank" style="color:var(--c-accent);text-decoration:none;font-weight:600;">06-46 95 03 01</a></span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-item-text">
+              <strong>E-mail</strong>
+              <span>info@sitesnel24.nl</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-item-text">
+              <strong>Vestiging</strong>
+              <span>Almere, Nederland</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">⏱️</div>
+            <div class="contact-item-text">
+              <strong>Reactietijd</strong>
+              <span>Binnen 1 werkdag</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;">Gratis offerte aanvragen</h3>
+        <div class="form-group">
+          <label for="naam">Naam</label>
+          <input type="text" id="naam" placeholder="Jan de Vries" />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mailadres</label>
+          <input type="email" id="email" placeholder="jan@jouwbedrijf.nl" />
+        </div>
+        <div class="form-group">
+          <label for="branche">Branche</label>
+          <select id="branche">
+            <option value="">Selecteer jouw branche</option>
+            <option>Kapper / Kapsalon</option>
+            <option>Schilder</option>
+            <option>Elektricien</option>
+            <option>Schoonmaak</option>
+            <option>Bouwbedrijf</option>
+            <option>Horeca</option>
+            <option>Zorg</option>
+            <option>Anders</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bericht">Bericht (optioneel)</label>
+          <textarea id="bericht" placeholder="Vertel ons iets over jouw bedrijf en wensen..."></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;">Verstuur aanvraag →</button>
+        <p style="font-size:0.78rem;color:var(--c-ink-soft);margin-top:0.75rem;text-align:center;">Gratis & vrijblijvend · Reactie binnen 1 werkdag</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <a href="#" class="footer-logo">SiteSnel<span>24</span></a>
-    <div class="footer-links">
-      <a href="#checker">Domeinchecker</a>
-      <a href="#diensten">Diensten</a>
-      <a href="#over">Over mij</a>
-      <a href="#privacy">Privacy</a>
-      <a href="https://wa.me/31646950301" target="_blank">WhatsApp</a>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">SiteSnel<span style="color:var(--c-accent)">24</span>.nl</a>
+        <p>Professionele websites voor zzp'ers en mkb. Snel, betaalbaar en altijd met persoonlijke aandacht. Gevestigd in Almere.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Diensten</h4>
+        <ul>
+          <li><a href="#werkwijze">Werkwijze</a></li>
+          <li><a href="#demos">Voorbeeldsites</a></li>
+          <li><a href="#prijzen">Prijzen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Branches</h4>
+        <ul>
+          <li><a href="https://kapper.sitesnel24.nl" target="_blank">Kapper</a></li>
+          <li><a href="https://schilder.sitesnel24.nl" target="_blank">Schilder</a></li>
+          <li><a href="https://elektricien.sitesnel24.nl" target="_blank">Elektricien</a></li>
+          <li><a href="https://schoonmaak.sitesnel24.nl" target="_blank">Schoonmaak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="#voorwaarden">Algemene voorwaarden</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="mailto:info@sitesnel24.nl">info@sitesnel24.nl</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 SiteSnel24.nl · Almere, Nederland · Alle rechten voorbehouden</p>
+      <div class="footer-bottom-links">
+        <a href="#voorwaarden">Algemene voorwaarden</a>
+        <a href="#contact">Privacy</a>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    © 2025 SiteSnel24 · Den Haag · <a href="tel:+31646950301" style="color:rgba(255,255,255,0.45);text-decoration:none">+31 6 46950301</a>
-  </div>
 </footer>
-
-<!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-  <div class="cookie-text">🍪 Deze website gebruikt alleen functionele cookies. <a href="#privacy">Meer info</a></div>
-  <button class="cookie-btn" onclick="localStorage.setItem('cookieOk','1');document.getElementById('cookieBanner').style.display='none'">Begrepen</button>
-</div>
-
-<script>
-if(localStorage.getItem('cookieOk')) document.getElementById('cookieBanner').style.display='none';
-
-function setExt(e){ document.getElementById('extSelect').value=e; }
-
-async function checkDomain(){
-  const input = document.getElementById('domainInput').value.trim().toLowerCase();
-  const ext = document.getElementById('extSelect').value;
-  const btn = document.getElementById('checkBtn');
-  const result = document.getElementById('result');
-  if(!input){ alert('Vul een domeinnaam in!'); return; }
-  const name = input.replace(/\.(nl|com|eu|net|online|shop)$/i,'');
-  const domain = name + ext;
-  result.style.display='block';
-  result.className='result laden';
-  document.getElementById('resultIcon').textContent='⏳';
-  document.getElementById('resultTitle').textContent='Bezig met controleren...';
-  document.getElementById('resultSub').textContent='We checken '+domain;
-  document.getElementById('resultCta').innerHTML='';
-  btn.disabled=true;
-  try{
-    const r = await fetch('https://rdap.verisign.com/com/v1/domain/'+domain,{method:'GET',mode:'cors'});
-    if(r.status===404){
-      result.className='result vrij';
-      document.getElementById('resultIcon').textContent='✅';
-      document.getElementById('resultTitle').textContent=domain+' is beschikbaar!';
-      document.getElementById('resultSub').textContent='Gefeliciteerd! Deze domeinnaam is nog vrij. Wij registreren hem voor jou!';
-      document.getElementById('resultCta').innerHTML='<p style="margin-top:.75rem;font-size:14px;color:#00A85E;font-weight:700">🎉 App mij via WhatsApp en ik regel het direct!</p>';
-    } else {
-      result.className='result bezet';
-      document.getElementById('resultIcon').textContent='❌';
-      document.getElementById('resultTitle').textContent=domain+' is helaas bezet';
-      document.getElementById('resultSub').textContent='Probeer een andere naam of extensie — ik help je de perfecte domeinnaam vinden!';
-    }
-  } catch(e){
-    result.className='result vrij';
-    document.getElementById('resultIcon').textContent='🔍';
-    document.getElementById('resultTitle').textContent='Check '+domain;
-    document.getElementById('resultSub').textContent='Stuur mij een WhatsApp en ik check het direct voor je!';
-    document.getElementById('resultCta').innerHTML='<p style="margin-top:.75rem;font-size:14px;color:#00A85E;font-weight:700">💬 WhatsApp mij direct!</p>';
-  }
-  btn.disabled=false;
-}
-
-// Scroll reveal
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
-</script>
 
 </body>
 </html>
