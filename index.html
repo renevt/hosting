@@ -1,314 +1,203 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <link rel="canonical" href="https://sitesnel24.nl/">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <title>Website laten maken Almere | Snelle & Betaalbare Websites | SiteSnel24</title>
+<title>Website laten maken Almere | Website sneller maken | SiteSnel24</title>
 
-<meta name="description" content="Website laten maken in Almere? Of is je website traag? SiteSnel24 helpt ondernemers met snelle websites die klanten opleveren. Gratis check mogelijk.">
+<meta name="description" content="Website laten maken in Almere of je website sneller maken? SiteSnel24 helpt ondernemers met snelle websites die klanten opleveren. Gratis check mogelijk.">
 
-<meta name="keywords" content="website laten maken almere, goedkope website laten maken, website sneller maken, pagespeed verbeteren, website optimalisatie almere">
+<link rel="canonical" href="https://sitesnel24.nl/">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    :root {
-      --primary: #10b981;
-      --primary-dark: #059669;
-      --bg-dark: #0f172a;
-      --bg-card: #1e293b;
-      --text-primary: #f1f5f9;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --border: #334155;
-      --border-light: #1e293b;
-    }
+:root {
+  --primary: #10b981;
+  --primary-dark: #059669;
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border: #334155;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial;
+  background: var(--bg-dark);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
 
-    .container {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    header {
-      border-bottom: 1px solid var(--border-light);
-      padding: 22px 0;
-      background: rgba(15, 23, 42, 0.95);
-    }
+/* HEADER */
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
 
-    .logo {
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--primary);
-    }
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+}
 
-    .hero {
-      padding: 90px 0 60px;
-      text-align: center;
-    }
+/* HERO */
+.hero {
+  padding: 90px 0 60px;
+  text-align: center;
+}
 
-    .badge {
-      display: inline-block;
-      margin-bottom: 22px;
-      padding: 8px 16px;
-      border-radius: 999px;
-      color: var(--primary);
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      font-weight: 700;
-      font-size: 14px;
-    }
+.badge {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: var(--primary);
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.3);
+  font-weight: 700;
+  font-size: 14px;
+}
 
-    h1 {
-      max-width: 850px;
-      margin: 0 auto 22px;
-      font-size: 38px;
-      line-height: 1.15;
-      color: var(--text-primary);
-      letter-spacing: -1px;
-    }
+h1 {
+  max-width: 850px;
+  margin: 0 auto 22px;
+  font-size: 38px;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
 
-    .hero-text {
-      max-width: 720px;
-      margin: 0 auto 18px;
-      font-size: 19px;
-      color: var(--text-muted);
-    }
+.hero-text {
+  max-width: 720px;
+  margin: 0 auto 18px;
+  font-size: 19px;
+  color: var(--text-muted);
+}
 
-    .hero-subtext {
-      max-width: 720px;
-      margin: 0 auto 55px;
-      font-size: 16px;
-      color: var(--text-muted);
-    }
+.hero-subtext {
+  max-width: 720px;
+  margin: 0 auto 55px;
+  font-size: 16px;
+  color: var(--text-muted);
+}
 
-    .options-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      max-width: 940px;
-      margin: 0 auto;
-    }
+/* BUTTONS */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
 
-    .option-card {
-      background: linear-gradient(135deg, var(--bg-card), rgba(30, 41, 59, 0.55));
-      padding: 42px 28px;
-      border-radius: 18px;
-      border: 2px solid var(--border);
-      text-align: center;
-      transition: 0.25s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 360px;
-    }
+.btn {
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+}
 
-    .option-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(16, 185, 129, 0.16);
-    }
+.btn-primary {
+  background: var(--primary);
+  color: var(--bg-dark);
+}
 
-    .option-icon {
-      font-size: 58px;
-      margin-bottom: 22px;
-    }
+.btn-secondary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
 
-    .option-card h2 {
-      color: var(--text-primary);
-      font-size: 30px;
-      margin-bottom: 14px;
-      line-height: 1.2;
-    }
+/* CARDS */
+.options {
+  margin-top: 80px;
+  display: grid;
+  gap: 25px;
+}
 
-    .option-card p {
-      color: var(--text-secondary);
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
+.card {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 28px;
-      border-radius: 11px;
-      font-size: 16px;
-      font-weight: 800;
-      text-decoration: none;
-      transition: 0.2s ease;
-      width: 100%;
-      border: none;
-      cursor: pointer;
-    }
+.card h2 {
+  color: var(--text-primary);
+  margin-bottom: 15px;
+}
 
-    .btn-primary {
-      background-color: var(--primary);
-      color: #062019;
-      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35);
-    }
+/* FOOTER */
+footer {
+  margin-top: 100px;
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+}
 
-    .btn-primary:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    .help-box {
-      max-width: 780px;
-      margin: 42px auto 0;
-      padding: 28px;
-      border-radius: 18px;
-      border: 1px solid rgba(16, 185, 129, 0.28);
-      background: rgba(16, 185, 129, 0.08);
-      text-align: center;
-    }
-
-    .help-box h2 {
-      color: var(--text-primary);
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .help-box p {
-      color: var(--text-muted);
-      margin-bottom: 22px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border-light);
-      padding: 34px 0;
-      margin-top: 80px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 14px;
-    }
-
-    footer strong {
-      color: var(--primary);
-    }
-
-    @media (min-width: 768px) {
-      .hero {
-        padding: 130px 0 80px;
-      }
-
-      h1 {
-        font-size: 58px;
-      }
-
-      .hero-text {
-        font-size: 21px;
-      }
-
-      .options-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
-      }
-
-      .option-card {
-        padding: 56px 40px;
-        min-height: 420px;
-      }
-
-      .option-card h2 {
-        font-size: 36px;
-      }
-    }
-  </style>
+@media(min-width:768px){
+  .btn-group {
+    flex-direction: row;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="container">
-      <div class="logo">SiteSnel24</div>
+<header>
+  <div class="container">
+    <div class="logo">SiteSnel24</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+
+    <span class="badge">Voor ondernemers in Almere</span>
+
+    <h1>Website laten maken of website sneller maken?</h1>
+
+    <p class="hero-text">
+      Wij helpen ondernemers in Almere met websites die snel laden en klanten opleveren.
+    </p>
+
+    <p class="hero-subtext">
+      Heb je nog geen website of is je site traag? Wij bouwen nieuwe websites of verbeteren je huidige website zodat je meer aanvragen krijgt.
+    </p>
+
+    <div class="btn-group">
+      <a href="https://websitelatenmaken.sitesnel24.nl" class="btn btn-primary">
+        Website laten maken
+      </a>
+
+      <a href="https://websitesnellermaken.sitesnel24.nl" class="btn btn-secondary">
+        Website sneller maken
+      </a>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
+  </div>
+</section>
 
-        <span class="badge">Websites voor kleine ondernemers</span>
-
-        <h1>Wat heb je nodig om online beter zichtbaar te worden?</h1>
-
-        <p class="hero-text">
-          SiteSnel24 helpt kleine ondernemers met snelle, duidelijke websites.
-          Kies hieronder wat het beste bij jouw situatie past.
-        </p>
-
-        <p class="hero-subtext">
-          Nog geen website? Dan maken we er een. Is je huidige website traag?
-          Dan meten we wat er misgaat en verbeteren we waar mogelijk de snelheid.
-        </p>
-
-        <div class="options-grid">
-
-          <article class="option-card">
-            <div>
-              <div class="option-icon">🌐</div>
-              <h2>Website laten maken</h2>
-              <p>
-                Nog geen goede website? Wij maken een snelle professionele pagina
-                voor jouw bedrijf, gericht op duidelijkheid en contact via WhatsApp.
-              </p>
-            </div>
-            <a href="https://websitelatenmaken.sitesnel24.nl" class="btn btn-primary">
-              Ik wil een website
-            </a>
-          </article>
-
-          <article class="option-card">
-            <div>
-              <div class="option-icon">⚡</div>
-              <h2>Website sneller maken</h2>
-              <p>
-                Is je website traag of scoort hij slecht op mobiel?
-                Wij checken je PageSpeed, laadtijd en technische verbeterpunten.
-              </p>
-            </div>
-            <a href="https://websitesnellermaken.sitesnel24.nl" class="btn btn-primary">
-              Ik wil mijn site sneller
-            </a>
-          </article>
-
-        </div>
-
-        <div class="help-box">
-          <h2>Twijfel je wat je nodig hebt?</h2>
-          <p>
-            Stuur gewoon een WhatsApp-bericht. Dan kijken we kort met je mee
-            en verwijzen we je naar de juiste oplossing.
-          </p>
-          <a href="https://wa.me/31646950301?text=Hoi%2C%20ik%20twijfel%20wat%20ik%20nodig%20heb.%20Kun%20je%20me%20helpen%3F" class="btn btn-primary">
-            Stuur een WhatsApp-bericht
-          </a>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p><strong>SiteSnel24.nl</strong> | Websites voor kleine ondernemers</p>
-      <p>© 2026 SiteSnel24. Alle rechten voorbehouden.</p>
-    </div>
-  </footer>
+<footer>
+  <div class="container">
+    © 2026 SiteSnel24 - Websites voor ondernemers
+  </div>
+</footer>
 
 </body>
 </html>
