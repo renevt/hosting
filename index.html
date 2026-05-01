@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Website laten maken in Almere | Vanaf €150 | SiteSnel24</title>
-  <meta name="description" content="Website laten maken in Almere? SiteSnel24 maakt snelle, professionele websites voor zzp'ers en kleine ondernemers. Vanaf €150. Contact via WhatsApp.">
-  <meta name="keywords" content="website laten maken almere, goedkope website almere, website voor zzp almere, website bouwen almere, webdesign almere">
+  <title>SiteSnel24 | Website laten maken Almere of website sneller maken</title>
+
+  <meta name="description" content="Website laten maken in Almere of je bestaande website sneller maken? SiteSnel24 helpt kleine ondernemers met snelle, duidelijke websites en PageSpeed optimalisatie.">
+  <meta name="keywords" content="website laten maken Almere, website sneller maken, goedkope website zzp, PageSpeed optimalisatie, website voor kleine ondernemers, SiteSnel24">
   <meta name="theme-color" content="#10b981">
-  <link rel="canonical" href="https://sitesnel24.nl/website-laten-maken-almere/" />
+  <link rel="canonical" href="https://sitesnel24.nl/" />
 
   <style>
     * {
@@ -22,6 +23,7 @@
       --green-dark: #059669;
       --dark: #0f172a;
       --card: #1e293b;
+      --card-soft: #263449;
       --text: #f8fafc;
       --muted: #cbd5e1;
       --soft: #94a3b8;
@@ -40,7 +42,7 @@
     }
 
     .container {
-      max-width: 1120px;
+      max-width: 1160px;
       margin: 0 auto;
       padding: 0 20px;
     }
@@ -48,7 +50,7 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 100;
       background: rgba(15, 23, 42, 0.95);
       border-bottom: 1px solid rgba(255,255,255,0.06);
       backdrop-filter: blur(10px);
@@ -57,43 +59,49 @@
     nav {
       min-height: 72px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
       color: var(--green);
       font-size: 26px;
       font-weight: 900;
-      text-decoration: none;
+      letter-spacing: -0.5px;
     }
 
-    .nav-link {
+    .nav-links {
+      display: none;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
       color: var(--muted);
       text-decoration: none;
       font-weight: 700;
-      display: none;
+      font-size: 14px;
     }
 
-    .nav-link:hover {
+    .nav-links a:hover {
       color: var(--green);
     }
 
-    @media (min-width: 760px) {
-      .nav-link {
-        display: inline-block;
+    @media (min-width: 850px) {
+      .nav-links {
+        display: flex;
       }
     }
 
     .hero {
-      padding: 86px 0 70px;
+      padding: 86px 0 68px;
       text-align: center;
     }
 
     .badge {
       display: inline-block;
-      margin-bottom: 22px;
       padding: 8px 15px;
+      margin-bottom: 22px;
       border-radius: 999px;
       border: 1px solid rgba(16,185,129,0.35);
       background: rgba(16,185,129,0.08);
@@ -103,28 +111,35 @@
     }
 
     h1 {
-      max-width: 920px;
+      max-width: 940px;
       margin: 0 auto 22px;
       color: var(--text);
       font-size: 38px;
       line-height: 1.12;
-      letter-spacing: -1px;
+      letter-spacing: -1.2px;
     }
 
-    .hero p {
+    .hero-text {
       max-width: 760px;
-      margin: 0 auto;
+      margin: 0 auto 16px;
       color: var(--soft);
-      font-size: 18px;
+      font-size: 19px;
+    }
+
+    .hero-subtext {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      color: var(--soft);
+      font-size: 16px;
     }
 
     .button-row {
       display: flex;
       flex-direction: column;
       gap: 14px;
-      align-items: center;
       justify-content: center;
-      margin-top: 32px;
+      align-items: center;
+      margin-top: 26px;
     }
 
     .btn {
@@ -145,7 +160,7 @@
     .btn-primary {
       background: var(--green);
       color: #062019;
-      box-shadow: 0 12px 30px rgba(16,185,129,0.25);
+      box-shadow: 0 12px 30px rgba(16,185,129,0.28);
     }
 
     .btn-primary:hover {
@@ -156,6 +171,7 @@
     .btn-secondary {
       color: var(--green);
       border: 2px solid var(--green);
+      background: transparent;
     }
 
     .btn-secondary:hover {
@@ -163,45 +179,47 @@
       transform: translateY(-2px);
     }
 
+    @media (min-width: 720px) {
+      .button-row {
+        flex-direction: row;
+      }
+
+      .btn {
+        width: auto;
+      }
+    }
+
     section {
-      padding: 72px 0;
+      padding: 78px 0;
       border-top: 1px solid rgba(255,255,255,0.06);
     }
 
     .section-title {
-      max-width: 850px;
-      margin: 0 auto 44px;
+      max-width: 860px;
+      margin: 0 auto 48px;
       text-align: center;
       color: var(--text);
       font-size: 32px;
       line-height: 1.18;
+      letter-spacing: -0.8px;
     }
 
     .section-intro {
       max-width: 760px;
-      margin: -24px auto 42px;
+      margin: -28px auto 46px;
       text-align: center;
       color: var(--soft);
+      font-size: 17px;
     }
 
-    .grid-2, .grid-3 {
+    .grid-2,
+    .grid-3,
+    .grid-4 {
       display: grid;
       gap: 22px;
     }
 
-    @media (min-width: 820px) {
-      h1 {
-        font-size: 58px;
-      }
-
-      .hero p {
-        font-size: 21px;
-      }
-
-      .section-title {
-        font-size: 42px;
-      }
-
+    @media (min-width: 760px) {
       .grid-2 {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -210,12 +228,14 @@
         grid-template-columns: repeat(3, 1fr);
       }
 
-      .button-row {
-        flex-direction: row;
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
       }
+    }
 
-      .btn {
-        width: auto;
+    @media (min-width: 1050px) {
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
       }
     }
 
@@ -234,11 +254,12 @@
 
     .card h3 {
       color: var(--text);
-      font-size: 22px;
+      font-size: 21px;
       margin-bottom: 12px;
     }
 
-    .card p, .card li {
+    .card p,
+    .card li {
       color: var(--soft);
       font-size: 15px;
     }
@@ -246,6 +267,69 @@
     .icon {
       font-size: 38px;
       margin-bottom: 16px;
+    }
+
+    .service-card {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 420px;
+    }
+
+    .service-card h3 {
+      font-size: 30px;
+      line-height: 1.15;
+    }
+
+    .service-card ul {
+      list-style: none;
+      margin: 22px 0 28px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .service-card li {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .service-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .price {
+      color: var(--green);
+      font-size: 42px;
+      font-weight: 900;
+      margin: 16px 0 8px;
+    }
+
+    .price small {
+      display: block;
+      color: var(--soft);
+      font-size: 15px;
+      margin-top: 3px;
+    }
+
+    .highlight-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(16,185,129,0.10), rgba(30,41,59,0.95));
+      border: 1px solid rgba(16,185,129,0.35);
+      border-radius: 22px;
+      padding: 36px;
+    }
+
+    .highlight-box h3 {
+      color: var(--text);
+      font-size: 26px;
+      margin-bottom: 18px;
     }
 
     .check-list {
@@ -256,7 +340,8 @@
 
     .check-list li {
       position: relative;
-      padding-left: 30px;
+      padding-left: 32px;
+      color: var(--muted);
     }
 
     .check-list li::before {
@@ -265,31 +350,6 @@
       left: 0;
       color: var(--green);
       font-weight: 900;
-    }
-
-    .price-box {
-      max-width: 760px;
-      margin: 0 auto;
-      text-align: center;
-      background: linear-gradient(135deg, rgba(16,185,129,0.10), rgba(30,41,59,0.95));
-      border: 1px solid rgba(16,185,129,0.35);
-      border-radius: 22px;
-      padding: 42px 28px;
-    }
-
-    .price {
-      color: var(--green);
-      font-size: 48px;
-      font-weight: 900;
-      margin: 10px 0 8px;
-    }
-
-    .price small {
-      display: block;
-      color: var(--soft);
-      font-size: 15px;
-      margin-top: 4px;
-      font-weight: 600;
     }
 
     .step {
@@ -311,7 +371,7 @@
     }
 
     .faq {
-      max-width: 850px;
+      max-width: 860px;
       margin: 0 auto;
       display: grid;
       gap: 14px;
@@ -364,16 +424,39 @@
       font-size: 17px;
     }
 
+    .location-text {
+      max-width: 900px;
+      margin: 0 auto;
+      color: var(--soft);
+      font-size: 16px;
+      text-align: center;
+    }
+
     footer {
       padding: 34px 0;
       border-top: 1px solid rgba(255,255,255,0.06);
       color: var(--soft);
       font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       text-align: center;
+      justify-content: space-between;
+      align-items: center;
     }
 
     footer strong {
       color: var(--green);
+    }
+
+    @media (min-width: 760px) {
+      .footer-inner {
+        flex-direction: row;
+        text-align: left;
+      }
     }
 
     .whatsapp-floating {
@@ -401,6 +484,20 @@
       height: 34px;
       fill: #fff;
     }
+
+    @media (min-width: 800px) {
+      h1 {
+        font-size: 58px;
+      }
+
+      .hero-text {
+        font-size: 21px;
+      }
+
+      .section-title {
+        font-size: 44px;
+      }
+    }
   </style>
 </head>
 
@@ -409,8 +506,14 @@
 <header>
   <div class="container">
     <nav>
-      <a class="logo" href="https://sitesnel24.nl/">SiteSnel24</a>
-      <a class="nav-link" href="https://sitesnel24.nl/">Terug naar hoofdsite</a>
+      <div class="logo">SiteSnel24</div>
+      <ul class="nav-links">
+        <li><a href="#diensten">Diensten</a></li>
+        <li><a href="#prijzen">Prijzen</a></li>
+        <li><a href="#werkwijze">Werkwijze</a></li>
+        <li><a href="#vragen">Vragen</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </div>
 </header>
@@ -419,79 +522,75 @@
 
   <section class="hero">
     <div class="container">
-      <span class="badge">Voor ondernemers in Almere, Poort, Buiten, Haven, Stad en omgeving.</span>
-      <h1>Website laten maken in Almere</h1>
-      <p>
-        Wil je een professionele website laten maken in Almere? SiteSnel24 bouwt snelle, duidelijke websites voor zzp'ers en kleine ondernemers. Gericht op vertrouwen, snelheid en contact via WhatsApp.
+      <span class="badge">Voor ondernemers in Almere en omgeving</span>
+
+      <h1>Website laten maken of website sneller maken?</h1>
+
+      <p class="hero-text">
+        SiteSnel24 helpt kleine ondernemers met snelle, duidelijke websites die gericht zijn op aanvragen via WhatsApp.
+      </p>
+
+      <p class="hero-subtext">
+        Nog geen website? Dan maken we er een. Is je huidige website traag of slecht op mobiel? Dan meten we wat er misgaat en verbeteren we waar mogelijk de snelheid.
       </p>
 
       <div class="button-row">
-        <a class="btn btn-primary" href="https://wa.me/31646950301?text=Hoi%2C%20ik%20wil%20graag%20een%20website%20laten%20maken%20in%20Almere.">
-          Start via WhatsApp
+        <a class="btn btn-primary" href="https://websitelatenmaken.sitesnel24.nl/">
+          Website laten maken
         </a>
-        <a class="btn btn-secondary" href="#prijzen">
-          Bekijk prijs
+        <a class="btn btn-secondary" href="https://websitesnellermaken.sitesnel24.nl/">
+          Website sneller maken
         </a>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="diensten">
     <div class="container">
-      <h2 class="section-title">Een website die duidelijk maakt wat jij doet</h2>
+      <h2 class="section-title">Kies wat bij jouw bedrijf past</h2>
       <p class="section-intro">
-        In Almere zoeken klanten vaak snel op hun telefoon. Een duidelijke, snelle website met WhatsApp contact kan dan net het verschil maken.
+        We houden het simpel. Geen ingewikkelde trajecten, maar praktische websites en verbeteringen voor kleine ondernemers.
       </p>
 
-      <div class="grid-3">
-        <article class="card">
-          <div class="icon">⚡</div>
-          <h3>Snel en mobielvriendelijk</h3>
-          <p>Je website moet snel openen en goed werken op telefoon, tablet en computer.</p>
-        </article>
-
-        <article class="card">
-          <div class="icon">💬</div>
-          <h3>Contact via WhatsApp</h3>
-          <p>Maak het bezoekers makkelijk. Met duidelijke WhatsApp-knoppen kunnen klanten direct reageren.</p>
-        </article>
-
-        <article class="card">
-          <div class="icon">🎯</div>
-          <h3>Gericht op aanvragen</h3>
-          <p>Geen overbodige rommel, maar een website die uitlegt wat je doet en waarom iemand contact moet opnemen.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="wat-krijg-je">
-    <div class="container">
-      <h2 class="section-title">Wat zit er in een website van SiteSnel24?</h2>
-
       <div class="grid-2">
-        <article class="card">
-          <h3>Basis website / landingspagina</h3>
-          <ul class="check-list">
-            <li>Professioneel ontwerp in jouw stijl</li>
-            <li>Geschikt voor mobiel en desktop</li>
-            <li>Duidelijke teksten voor jouw bedrijf</li>
-            <li>WhatsApp-knoppen voor direct contact</li>
-            <li>Basis SEO structuur voor Google</li>
-            <li>Snelle laadtijd als uitgangspunt</li>
-          </ul>
+        <article class="card service-card">
+          <div>
+            <div class="icon">🌐</div>
+            <h3>Website laten maken</h3>
+            <p>
+              Ideaal als je nog geen website hebt of snel professioneel online wilt staan.
+            </p>
+            <ul>
+              <li>Professionele landingspagina</li>
+              <li>Mobielvriendelijk ontwerp</li>
+              <li>WhatsApp contactknoppen</li>
+              <li>Basis SEO structuur</li>
+              <li>Geschikt voor zzp en kleine bedrijven</li>
+            </ul>
+          </div>
+          <a class="btn btn-primary" href="https://websitelatenmaken.sitesnel24.nl/">
+            Bekijk website laten maken
+          </a>
         </article>
 
-        <article class="card">
-          <h3>Voor wie is dit geschikt?</h3>
-          <ul class="check-list">
-            <li>Zzp'ers die snel online willen</li>
-            <li>Lokale bedrijven in Almere</li>
-            <li>Kappers, loodgieters, schoonmakers en schilders</li>
-            <li>Restaurants, dienstverleners en kleine winkels</li>
-            <li>Ondernemers die vooral via WhatsApp contact willen</li>
-            <li>Bedrijven met een oude of ontbrekende website</li>
-          </ul>
+        <article class="card service-card">
+          <div>
+            <div class="icon">⚡</div>
+            <h3>Website sneller maken</h3>
+            <p>
+              Voor bestaande websites die traag laden, slecht scoren op mobiel of een lage PageSpeed score hebben.
+            </p>
+            <ul>
+              <li>Gratis snelheidscheck</li>
+              <li>Google PageSpeed analyse</li>
+              <li>Afbeeldingen optimaliseren</li>
+              <li>Overbodige code opschonen</li>
+              <li>Advies of opnieuw bouwen slimmer is</li>
+            </ul>
+          </div>
+          <a class="btn btn-primary" href="https://websitesnellermaken.sitesnel24.nl/">
+            Bekijk website sneller maken
+          </a>
         </article>
       </div>
     </div>
@@ -499,46 +598,81 @@
 
   <section id="prijzen">
     <div class="container">
-      <h2 class="section-title">Website laten maken vanaf een duidelijke prijs</h2>
+      <h2 class="section-title">Heldere prijzen zonder technisch gedoe</h2>
 
-      <div class="price-box">
-        <h3>Professionele landingspagina</h3>
-        <div class="price">vanaf €150<small>eenmalig, afhankelijk van wensen</small></div>
-        <p>
-          Een goede start voor ondernemers in Almere die professioneel online zichtbaar willen zijn.
-          Extra pagina's, maatwerk, onderhoud of hosting kunnen apart worden besproken.
-        </p>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Nieuwe website</h3>
+          <div class="price">vanaf €150<small>voor een professionele landingspagina</small></div>
+          <p>
+            Voor ondernemers die snel online willen staan met een nette, duidelijke en snelle website.
+          </p>
+        </article>
 
-        <div class="button-row">
-          <a class="btn btn-primary" href="https://wa.me/31646950301?text=Hoi%2C%20ik%20wil%20graag%20een%20website%20laten%20maken%20in%20Almere%20vanaf%20150%20euro.">
-            Vraag info aan
-          </a>
-        </div>
+        <article class="card">
+          <h3>Website optimalisatie</h3>
+          <div class="price">vanaf €50<small>na gratis snelheidscheck</small></div>
+          <p>
+            We meten eerst wat er misgaat en geven daarna een duidelijk voorstel.
+          </p>
+        </article>
       </div>
     </div>
   </section>
 
   <section>
+    <div class="container">
+      <h2 class="section-title">Waarom SiteSnel24?</h2>
+
+      <div class="grid-4">
+        <article class="card">
+          <div class="icon">💬</div>
+          <h3>Contact via WhatsApp</h3>
+          <p>Laagdrempelig contact. Je hoeft geen lange formulieren in te vullen.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">⚡</div>
+          <h3>Snel en praktisch</h3>
+          <p>We richten ons op duidelijke websites die snel laden en makkelijk te begrijpen zijn.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🎯</div>
+          <h3>Voor kleine ondernemers</h3>
+          <p>Geen groot bureau, geen dure praat. Gewoon een praktische oplossing.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🔍</div>
+          <h3>Eerst eerlijk kijken</h3>
+          <p>Bij trage websites meten we eerst wat er speelt voordat we iets beloven.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="werkwijze">
     <div class="container">
       <h2 class="section-title">Zo werkt het</h2>
 
       <div class="grid-3">
         <article class="card step">
           <div class="number">1</div>
-          <h3>Stuur je gegevens</h3>
-          <p>Vertel via WhatsApp wat je bedrijf doet, welke diensten je aanbiedt en wat je belangrijk vindt.</p>
+          <h3>Stuur een bericht</h3>
+          <p>Vertel kort wat je nodig hebt of stuur je huidige website link.</p>
         </article>
 
         <article class="card step">
           <div class="number">2</div>
-          <h3>Wij bouwen je pagina</h3>
-          <p>We maken een duidelijke website die past bij jouw bedrijf en klanten in Almere.</p>
+          <h3>We kijken mee</h3>
+          <p>We geven aan wat handig is: nieuwe website, snelheid verbeteren of eerst meten.</p>
         </article>
 
         <article class="card step">
           <div class="number">3</div>
-          <h3>Jij keurt goed</h3>
-          <p>Na jouw akkoord kan de website online worden gezet op je eigen domeinnaam.</p>
+          <h3>Duidelijke afspraak</h3>
+          <p>Je krijgt vooraf een helder voorstel. Daarna gaan we pas aan de slag.</p>
         </article>
       </div>
     </div>
@@ -546,53 +680,47 @@
 
   <section>
     <div class="container">
-      <h2 class="section-title">Waarom geen dure website nodig is om te starten</h2>
-      <div class="grid-2">
-        <article class="card">
-          <h3>Veel ondernemers willen gewoon gevonden worden</h3>
-          <p>
-            Je hebt niet altijd een grote website nodig. Vaak is een snelle, duidelijke pagina met je diensten, locatie, foto's en WhatsApp-knop al genoeg om professioneel over te komen.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Later uitbreiden kan altijd</h3>
-          <p>
-            Begin klein en overzichtelijk. Als je later extra pagina's, projecten, reviews of formulieren wilt toevoegen, kan dat gewoon worden besproken.
-          </p>
-        </article>
+      <div class="highlight-box">
+        <h3>Voor wie is dit bedoeld?</h3>
+        <ul class="check-list">
+          <li>Zzp'ers die snel een professionele website willen</li>
+          <li>Lokale bedrijven zoals kappers, loodgieters, schoonmakers, schilders en restaurants</li>
+          <li>Ondernemers met een oude of trage website</li>
+          <li>Bedrijven die vooral via WhatsApp contact willen krijgen</li>
+          <li>Ondernemers in Almere, Lelystad, Zeewolde, Harderwijk en omgeving</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="vragen">
     <div class="container">
       <h2 class="section-title">Veelgestelde vragen</h2>
 
       <div class="faq">
         <details>
-          <summary>Kan mijn website echt snel online staan?</summary>
-          <p>Bij complete informatie kan een eenvoudige landingspagina snel klaar zijn. Bij extra wensen of maatwerk duurt het langer.</p>
+          <summary>Maak je complete websites?</summary>
+          <p>Ja. De basis is een professionele landingspagina vanaf €150. Extra pagina's, maatwerk of onderhoud kunnen apart worden besproken.</p>
         </details>
 
         <details>
-          <summary>Is de prijs altijd €150?</summary>
-          <p>€150 is een vanafprijs voor een eenvoudige professionele landingspagina. Extra pagina's, maatwerk of onderhoud worden vooraf duidelijk besproken.</p>
+          <summary>Kan je mijn bestaande website sneller maken?</summary>
+          <p>Vaak wel, maar niet altijd. We doen eerst een gratis snelheidscheck en geven daarna eerlijk advies.</p>
         </details>
 
         <details>
-          <summary>Heb ik zelf technische kennis nodig?</summary>
-          <p>Nee. Jij stuurt je bedrijfsinformatie, logo, foto's en wensen. De technische kant regelen wij.</p>
+          <summary>Is een domeinnaam of e-mail inbegrepen?</summary>
+          <p>Nee, domeinnaam en e-mail zijn apart. We kunnen je wel uitleggen wat handig is en hoe je dat regelt.</p>
         </details>
 
         <details>
-          <summary>Is dit alleen voor ondernemers in Almere?</summary>
-          <p>Nee. SiteSnel24 werkt voor ondernemers in heel Nederland, maar deze pagina is speciaal gericht op ondernemers in Almere en omgeving.</p>
+          <summary>Hoe snel kan een website online?</summary>
+          <p>Bij complete informatie kan een eenvoudige landingspagina snel klaar zijn. Bij maatwerk of extra wensen duurt het langer.</p>
         </details>
 
         <details>
-          <summary>Kan ik later wijzigingen laten doen?</summary>
-          <p>Ja. Kleine updates, extra teksten, foto's of nieuwe onderdelen kunnen later in overleg worden aangepast.</p>
+          <summary>Werk je alleen in Almere?</summary>
+          <p>Nee. SiteSnel24 richt zich op Almere en omgeving, maar kan ondernemers door heel Nederland helpen.</p>
         </details>
       </div>
     </div>
@@ -600,13 +728,21 @@
 
   <section>
     <div class="container">
+      <p class="location-text">
+        SiteSnel24 richt zich op ondernemers die zoeken naar een website laten maken in Almere, een goedkope website voor zzp, een snelle website voor kleine ondernemers of hulp bij PageSpeed optimalisatie en website snelheid verbeteren.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
       <div class="cta-box">
-        <h2>Website laten maken in Almere?</h2>
+        <h2>Twijfel je wat je nodig hebt?</h2>
         <p>
-          Stuur een WhatsApp-bericht en vertel kort wat je bedrijf doet. Dan kijken we welke website het beste past.
+          Stuur een WhatsApp-bericht. Dan kijken we kort met je mee en verwijzen we je naar de juiste oplossing.
         </p>
-        <a class="btn btn-primary" href="https://wa.me/31646950301?text=Hoi%2C%20ik%20wil%20graag%20een%20website%20laten%20maken%20in%20Almere.">
-          Bericht sturen via WhatsApp
+        <a class="btn btn-primary" href="https://wa.me/31646950301?text=Hoi%2C%20ik%20twijfel%20wat%20ik%20nodig%20heb%20voor%20mijn%20website.%20Kun%20je%20me%20helpen%3F">
+          Stuur een WhatsApp-bericht
         </a>
       </div>
     </div>
@@ -616,12 +752,14 @@
 
 <footer>
   <div class="container">
-    <p><strong>SiteSnel24.nl</strong> - Website laten maken in Almere en heel Nederland</p>
-    <p>© 2026 SiteSnel24. Alle rechten voorbehouden.</p>
+    <div class="footer-inner">
+      <p><strong>SiteSnel24.nl</strong> - Websites voor kleine ondernemers</p>
+      <p>© 2026 SiteSnel24. Alle rechten voorbehouden.</p>
+    </div>
   </div>
 </footer>
 
-<a class="whatsapp-floating" href="https://wa.me/31646950301?text=Hoi%2C%20ik%20wil%20graag%20een%20website%20laten%20maken%20in%20Almere." aria-label="Chat via WhatsApp">
+<a class="whatsapp-floating" href="https://wa.me/31646950301?text=Hoi%2C%20ik%20wil%20graag%20informatie%20over%20SiteSnel24." aria-label="Chat via WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
   </svg>
