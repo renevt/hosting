@@ -39,7 +39,6 @@ h1 {
 p {
   color:#d7d7d7;
   margin-bottom:20px;
-  line-height:1.5;
 }
 
 input, textarea {
@@ -48,7 +47,6 @@ input, textarea {
   margin-bottom:14px;
   border-radius:10px;
   border:1px solid #303642;
-  font-size:15px;
 }
 
 textarea {
@@ -62,19 +60,12 @@ button {
   border:none;
   color:#fff;
   font-size:16px;
-  font-weight:bold;
   border-radius:10px;
-  cursor:pointer;
-}
-
-button:hover {
-  background:#1ebe5d;
 }
 
 .checkbox {
   margin-bottom:15px;
   font-size:14px;
-  color:#ddd;
 }
 
 .note {
@@ -82,13 +73,6 @@ button:hover {
   color:#aaa;
   margin-top:-8px;
   margin-bottom:12px;
-}
-
-.small {
-  font-size:12px;
-  color:#aaa;
-  text-align:center;
-  margin-top:15px;
 }
 </style>
 </head>
@@ -102,7 +86,7 @@ button:hover {
 <h1>Gratis demo website aanvragen</h1>
 
 <p>
-Vul je gegevens in. Wij maken op basis hiervan een gratis demo website voor jouw bedrijf.
+Vul je gegevens in. Wij nemen contact met je op via WhatsApp of telefoon om je demo af te stemmen.
 </p>
 
 <form id="demoForm" action="https://formsubmit.co/info@sitesnel24.nl" method="POST" enctype="multipart/form-data">
@@ -114,22 +98,21 @@ Vul je gegevens in. Wij maken op basis hiervan een gratis demo website voor jouw
 
 <input type="text" name="_honey" style="display:none">
 
-<input type="hidden" id="whatsappLink" name="WhatsApp direct openen" value="">
+<input type="hidden" id="whatsappLink" name="WhatsApp link" value="">
 
 <input type="text" name="Bedrijfsnaam" placeholder="Bedrijfsnaam" required>
-
-<input type="text" name="Naam" placeholder="Naam contactpersoon" required>
+<input type="text" name="Naam" placeholder="Naam" required>
 
 <input 
   type="tel" 
   id="telefoon"
   name="Telefoon" 
-  placeholder="Telefoonnummer, bijvoorbeeld 06 12345678" 
+  placeholder="Telefoonnummer (voor WhatsApp contact)" 
   required
 >
 
 <div class="note">
-Wij gebruiken je telefoonnummer om je snel te kunnen bereiken over je demo.
+Wij gebruiken dit nummer om je snel te kunnen bereiken over je demo.
 </div>
 
 <input type="email" name="Email" placeholder="E-mailadres (optioneel)">
@@ -143,14 +126,14 @@ Wij gebruiken je telefoonnummer om je snel te kunnen bereiken over je demo.
 
 <div class="checkbox">
 <label>
-<input type="checkbox" name="Toestemming WhatsApp" value="Ja, klant geeft toestemming voor WhatsApp contact" required>
- Ik ga ermee akkoord dat SiteSnel24 contact met mij opneemt via WhatsApp of telefoon over mijn demo aanvraag.
+<input type="checkbox" name="Toestemming contact" value="Ja" required>
+ Ik ga ermee akkoord dat SiteSnel24 contact met mij opneemt via WhatsApp of telefoon over mijn aanvraag.
 </label>
 </div>
 
 <div class="checkbox">
 <label>
-<input type="checkbox" name="Mens check" value="Ja, ingevuld door mens" required>
+<input type="checkbox" name="Mens check" value="Ja" required>
  Ik ben geen robot en vul dit formulier zelf in.
 </label>
 </div>
@@ -158,10 +141,6 @@ Wij gebruiken je telefoonnummer om je snel te kunnen bereiken over je demo.
 <button type="submit">Vraag gratis demo aan</button>
 
 </form>
-
-<p class="small">
-Na het verzenden gaan wij aan de slag met jouw demo website.
-</p>
 
 </div>
 
