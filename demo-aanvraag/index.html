@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gratis demo website aanvragen | SiteSnel24</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 6px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #25D366;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1ebe5d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Gratis demo website aanvragen</h1>
+
+  <p>
+  Vul hieronder je gegevens in en upload 3 foto's.<br>
+  Wij maken gratis een demo website voor jouw bedrijf.
+  </p>
+
+  <form action="https://formsubmit.co/info@sitesnel24.nl" method="POST" enctype="multipart/form-data">
+
+    <input type="text" name="Bedrijfsnaam" placeholder="Bedrijfsnaam" required>
+
+    <input type="tel" name="Telefoon" placeholder="Telefoonnummer" required>
+
+    <textarea name="Beschrijving" placeholder="Wat doe je precies? Wat bied je aan?" required></textarea>
+
+    <label>Upload 3 foto's:</label>
+    <input type="file" name="foto1" accept="image/*" required>
+    <input type="file" name="foto2" accept="image/*">
+    <input type="file" name="foto3" accept="image/*">
+
+    <button type="submit">Vraag gratis demo aan</button>
+
+  </form>
+</div>
+
+</body>
+</html>
