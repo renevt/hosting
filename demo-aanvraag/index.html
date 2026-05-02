@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gratis demo website aanvragen | SiteSnel24</title>
 
 <style>
@@ -30,9 +31,15 @@ body {
   margin-bottom:16px;
 }
 
-h1 { font-size:28px; margin-bottom:12px; }
+h1 {
+  font-size:28px;
+  margin-bottom:12px;
+}
 
-p { color:#d7d7d7; margin-bottom:20px; }
+p {
+  color:#d7d7d7;
+  margin-bottom:20px;
+}
 
 input, textarea {
   width:100%;
@@ -42,7 +49,9 @@ input, textarea {
   border:1px solid #303642;
 }
 
-textarea { min-height:120px; }
+textarea {
+  min-height:120px;
+}
 
 button {
   width:100%;
@@ -54,7 +63,10 @@ button {
   border-radius:10px;
 }
 
-.checkbox { margin-bottom:15px; font-size:14px; }
+.checkbox {
+  margin-bottom:15px;
+  font-size:14px;
+}
 
 .note {
   font-size:13px;
@@ -92,21 +104,17 @@ Vul alle gegevens in. Wij nemen contact met u op via WhatsApp of telefoon om uw 
 
 <form id="demoForm" action="https://formsubmit.co/info@sitesnel24.nl" method="POST" enctype="multipart/form-data">
 
-<!-- FormSubmit settings -->
+<!-- FIX: juiste redirect -->
+<input type="hidden" name="_next" value="https://sitesnel24.nl/bedankt/index.html">
+
 <input type="hidden" name="_subject" value="Nieuwe demo aanvraag SiteSnel24">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="https://sitesnel24.nl/bedankt/">
 
-<!-- Spam bescherming -->
 <input type="text" name="_honey" style="display:none">
-
-<!-- Vastleggen extra info -->
-<input type="hidden" name="Toestemming tekst" value="Klant geeft toestemming voor WhatsApp/telefoon contact">
 <input type="hidden" id="timestamp" name="Datum en tijd" value="">
 <input type="hidden" id="whatsappLink" name="WhatsApp link" value="">
 
-<!-- Velden -->
 <input type="text" name="Bedrijfsnaam" placeholder="Bedrijfsnaam" required>
 <input type="text" name="Naam" placeholder="Naam" required>
 
@@ -139,7 +147,6 @@ Wij gebruiken dit nummer om u snel te kunnen bereiken over uw demo.
 <label>Upload foto 3</label>
 <input type="file" name="foto3" accept="image/*" required>
 
-<!-- Toestemming -->
 <div class="checkbox">
 <label>
 <input type="checkbox" name="Toestemming gegeven" value="Ja" required>
@@ -161,7 +168,6 @@ Door het versturen van dit formulier gaat u akkoord met onze
 <script>
 document.getElementById("demoForm").addEventListener("submit", function(e) {
 
-  // Tijd vastleggen
   document.getElementById("timestamp").value = new Date().toLocaleString();
 
   let telefoon = document.getElementById("telefoon").value;
@@ -187,7 +193,7 @@ document.getElementById("demoForm").addEventListener("submit", function(e) {
     telefoon = telefoon.replace("+", "");
   }
 
-  const bericht = encodeURIComponent("Hallo, ik heb uw demo aanvraag ontvangen via SiteSnel24. Ik neem contact met u op als er nog vragen zijn.");
+  const bericht = encodeURIComponent("Hallo, ik heb uw demo aanvraag ontvangen via SiteSnel24. Ik neem contact met u op.");
 
   const whatsappUrl = "https://wa.me/" + telefoon + "?text=" + bericht;
 
