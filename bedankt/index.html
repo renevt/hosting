@@ -3,13 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bedankt | SiteSnel24</title>
+
+<!-- Automatische redirect na 3 seconden -->
+<meta http-equiv="refresh" content="3;url=https://sitesnel24.nl/">
 
 <style>
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background: #0f1115;
-  color: #fff;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,28 +23,38 @@ body {
 
 .box {
   background: #181b22;
-  padding: 30px;
+  padding: 35px;
   border-radius: 15px;
   text-align: center;
-  max-width: 400px;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
 h1 {
   color: #25D366;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 p {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
-a {
+a.button {
   display: inline-block;
+  margin-top: 15px;
   padding: 12px 20px;
   background: #25D366;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
+}
+
+a.link {
+  color: #25D366;
+  text-decoration: none;
+  display: block;
+  margin-top: 15px;
 }
 </style>
 </head>
@@ -47,20 +62,26 @@ a {
 <body>
 
 <div class="box">
+
   <h1>Bedankt!</h1>
 
   <p>
-    Je aanvraag is ontvangen.<br>
-    We gaan direct aan de slag met jouw demo website.
+    Bedankt voor uw aanvraag.<br>
+    We gaan direct aan de slag met uw demo website.
   </p>
 
   <p>
-    Je hoort snel van ons 👍
+    U wordt automatisch omgeleid naar onze website.
   </p>
 
-  <a href="https://wa.me/31646950301">
-    Contact via WhatsApp
+  <a class="button" href="https://wa.me/31646950301">
+    Direct contact via WhatsApp
   </a>
+
+  <a class="link" href="https://sitesnel24.nl/">
+    Of klik hier als u niet wordt doorgestuurd
+  </a>
+
 </div>
 
 </body>
