@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Gratis demo website aanvragen | SiteSnel24</title>
 
 <style>
@@ -31,15 +30,9 @@ body {
   margin-bottom:16px;
 }
 
-h1 {
-  font-size:28px;
-  margin-bottom:12px;
-}
+h1 { font-size:28px; margin-bottom:12px; }
 
-p {
-  color:#d7d7d7;
-  margin-bottom:20px;
-}
+p { color:#d7d7d7; margin-bottom:20px; }
 
 input, textarea {
   width:100%;
@@ -47,12 +40,9 @@ input, textarea {
   margin-bottom:14px;
   border-radius:10px;
   border:1px solid #303642;
-  font-size:15px;
 }
 
-textarea {
-  min-height:120px;
-}
+textarea { min-height:120px; }
 
 button {
   width:100%;
@@ -62,17 +52,9 @@ button {
   color:#fff;
   font-size:16px;
   border-radius:10px;
-  cursor:pointer;
 }
 
-button:hover {
-  background:#1ebe5d;
-}
-
-.checkbox {
-  margin-bottom:15px;
-  font-size:14px;
-}
+.checkbox { margin-bottom:15px; font-size:14px; }
 
 .note {
   font-size:13px;
@@ -92,7 +74,6 @@ button:hover {
 .small {
   font-size:12px;
   color:#aaa;
-  margin-top:10px;
 }
 </style>
 </head>
@@ -106,19 +87,26 @@ button:hover {
 <h1>Gratis demo website aanvragen</h1>
 
 <p>
-Vul alle gegevens in. Wij nemen contact met u op via WhatsApp of telefoon om uw demo te bespreken.
+Vul alle gegevens in. Wij nemen contact met u op via WhatsApp of telefoon om uw aanvraag te bespreken.
 </p>
 
 <form id="demoForm" action="https://formsubmit.co/info@sitesnel24.nl" method="POST" enctype="multipart/form-data">
 
+<!-- FormSubmit settings -->
 <input type="hidden" name="_subject" value="Nieuwe demo aanvraag SiteSnel24">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_next" value="https://sitesnel24.nl/bedankt/">
 
+<!-- Spam bescherming -->
 <input type="text" name="_honey" style="display:none">
+
+<!-- Vastleggen extra info -->
+<input type="hidden" name="Toestemming tekst" value="Klant geeft toestemming voor WhatsApp/telefoon contact">
+<input type="hidden" id="timestamp" name="Datum en tijd" value="">
 <input type="hidden" id="whatsappLink" name="WhatsApp link" value="">
 
+<!-- Velden -->
 <input type="text" name="Bedrijfsnaam" placeholder="Bedrijfsnaam" required>
 <input type="text" name="Naam" placeholder="Naam" required>
 
@@ -151,9 +139,10 @@ Wij gebruiken dit nummer om u snel te kunnen bereiken over uw demo.
 <label>Upload foto 3</label>
 <input type="file" name="foto3" accept="image/*" required>
 
+<!-- Toestemming -->
 <div class="checkbox">
 <label>
-<input type="checkbox" name="Toestemming contact" value="Ja" required>
+<input type="checkbox" name="Toestemming gegeven" value="Ja" required>
  Ik ga ermee akkoord dat SiteSnel24 contact met mij kan opnemen via WhatsApp of telefoon om mijn aanvraag te bespreken.
 </label>
 </div>
@@ -171,6 +160,9 @@ Door het versturen van dit formulier gaat u akkoord met onze
 
 <script>
 document.getElementById("demoForm").addEventListener("submit", function(e) {
+
+  // Tijd vastleggen
+  document.getElementById("timestamp").value = new Date().toLocaleString();
 
   let telefoon = document.getElementById("telefoon").value;
 
@@ -195,7 +187,7 @@ document.getElementById("demoForm").addEventListener("submit", function(e) {
     telefoon = telefoon.replace("+", "");
   }
 
-  const bericht = encodeURIComponent("Hallo, ik heb uw demo aanvraag ontvangen via SiteSnel24. Ik neem contact met u op als er nog vragen zijn over de demo.");
+  const bericht = encodeURIComponent("Hallo, ik heb uw demo aanvraag ontvangen via SiteSnel24. Ik neem contact met u op als er nog vragen zijn.");
 
   const whatsappUrl = "https://wa.me/" + telefoon + "?text=" + bericht;
 
