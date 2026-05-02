@@ -1,146 +1,36 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section class="speed-check" id="check" style="background:#0f172a;color:white;padding:60px 0;">
 
-<title>SiteSnel24 - Website check</title>
+<div style="max-width:900px;margin:auto;text-align:center;">
 
-<style>
-body {
-  margin:0;
-  font-family:Arial;
-  background:#0f172a;
-  color:#fff;
-}
+<h2 style="font-size:32px;margin-bottom:10px;">
+Controleer de snelheid van uw website
+</h2>
 
-.container {
-  max-width:900px;
-  margin:auto;
-  padding:40px 20px;
-  text-align:center;
-}
-
-h1 {
-  font-size:32px;
-  margin-bottom:10px;
-}
-
-p {
-  color:#94a3b8;
-}
-
-.input-box {
-  display:flex;
-  gap:10px;
-  margin-top:25px;
-}
-
-input {
-  flex:1;
-  padding:16px;
-  border-radius:10px;
-  border:2px solid #10b981;
-  background:#020617;
-  color:#fff;
-  font-size:16px;
-}
-
-button {
-  padding:16px 25px;
-  border:none;
-  border-radius:10px;
-  background:#10b981;
-  color:#062019;
-  font-weight:900;
-  cursor:pointer;
-}
-
-button:hover {
-  background:#059669;
-}
-
-#result {
-  margin-top:30px;
-  padding:25px;
-  border-radius:15px;
-  background:#1e293b;
-  display:none;
-}
-
-.score {
-  font-size:55px;
-  font-weight:900;
-}
-
-.actions {
-  margin-top:20px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.actions a {
-  padding:14px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:900;
-}
-
-.primary {
-  background:#10b981;
-  color:#062019;
-}
-
-.secondary {
-  border:2px solid #10b981;
-  color:#10b981;
-}
-
-.loading {
-  color:#94a3b8;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<h1>Controleer de snelheid van uw website</h1>
-
-<p>
+<p style="color:#94a3b8;">
 Komt u via onze e-mail? Dan staat uw website hieronder mogelijk al ingevuld.
 </p>
 
-<div class="input-box">
-<input id="url" placeholder="https://uwwebsite.nl">
-<button onclick="check()">Analyseren</button>
+<div style="display:flex;gap:10px;margin-top:25px;justify-content:center;">
+<input id="url" placeholder="https://uwwebsite.nl"
+style="flex:1;max-width:600px;padding:16px;border-radius:10px;border:2px solid #10b981;background:#020617;color:white;font-size:16px;">
+
+<button onclick="check()"
+style="padding:16px 25px;border:none;border-radius:10px;background:#10b981;color:#062019;font-weight:900;">
+Analyseren
+</button>
 </div>
 
-<div id="result"></div>
+<div id="result" style="margin-top:30px;"></div>
 
 </div>
+</section>
 
 <script>
-
 function fixUrl(url){
   if(!url.startsWith("http")){
     return "https://" + url;
   }
   return url;
-}
-
-function getColor(score){
-  if(score < 50) return "#ef4444";
-  if(score < 80) return "#f59e0b";
-  return "#10b981";
-}
-
-function getText(score){
-  if(score < 50) return "Uw website is traag en kan klanten kosten.";
-  if(score < 80) return "Uw website kan sneller.";
-  return "Uw website is goed.";
 }
 
 async function check(){
@@ -150,15 +40,7 @@ async function check(){
 
   let url = fixUrl(input.value);
 
-  if(!url){
-    alert("Voer een website in");
-    return;
-  }
-
-  result.style.display = "block";
-  result.innerHTML = `
-    <p class="loading">Analyse wordt gestart...</p>
-  `;
+  result.innerHTML = "Bezig met analyse...";
 
   try{
 
@@ -173,54 +55,57 @@ async function check(){
 
     const score = Math.round(data.lighthouseResult.categories.performance.score * 100);
 
+    let kleur = "#10b981";
+    if(score < 50) kleur = "#ef4444";
+    else if(score < 80) kleur = "#f59e0b";
+
     result.innerHTML = `
-      <div class="score" style="color:${getColor(score)}">${score}</div>
-      <p>${getText(score)}</p>
+      <div style="background:#1e293b;padding:30px;border-radius:15px;">
+        <div style="font-size:55px;font-weight:900;color:${kleur};">${score}</div>
+        <p>${score < 50 ? "Uw website is traag" : score < 80 ? "Kan beter" : "Goed"}</p>
 
-      <div class="actions">
-        <a class="primary" href="https://websitesnellermaken.sitesnel24.nl/?site=${encodeURIComponent(url)}">
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+          <a href="https://websitesnellermaken.sitesnel24.nl/?site=${encodeURIComponent(url)}"
+          style="background:#10b981;color:#062019;padding:14px;border-radius:10px;text-decoration:none;font-weight:900;">
           Website sneller maken
-        </a>
+          </a>
 
-        <a class="secondary" href="https://websitelatenmaken.sitesnel24.nl/?site=${encodeURIComponent(url)}">
+          <a href="https://websitelatenmaken.sitesnel24.nl/?site=${encodeURIComponent(url)}"
+          style="border:2px solid #10b981;color:#10b981;padding:14px;border-radius:10px;text-decoration:none;font-weight:900;">
           Nieuwe website laten maken
-        </a>
+          </a>
+        </div>
       </div>
     `;
 
   }catch(e){
 
     result.innerHTML = `
-      <h3>Analyse tijdelijk niet beschikbaar</h3>
+      <div style="background:#1e293b;padding:30px;border-radius:15px;">
+        <h3>Analyse niet beschikbaar</h3>
+        <p>De test werkt nu niet. Kies hieronder wat u wilt doen.</p>
 
-      <p>
-      De automatische test werkt op dit moment niet.
-      </p>
-
-      <div class="actions">
-
-        <a class="primary" href="https://websitesnellermaken.sitesnel24.nl/?site=${encodeURIComponent(url)}">
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+          <a href="https://websitesnellermaken.sitesnel24.nl/?site=${encodeURIComponent(url)}"
+          style="background:#10b981;color:#062019;padding:14px;border-radius:10px;text-decoration:none;font-weight:900;">
           Website laten nakijken
-        </a>
+          </a>
 
-        <a class="secondary" href="https://websitelatenmaken.sitesnel24.nl/?site=${encodeURIComponent(url)}">
+          <a href="https://websitelatenmaken.sitesnel24.nl/?site=${encodeURIComponent(url)}"
+          style="border:2px solid #10b981;color:#10b981;padding:14px;border-radius:10px;text-decoration:none;font-weight:900;">
           Nieuwe website laten maken
-        </a>
-
+          </a>
+        </div>
       </div>
     `;
   }
 }
 
-// AUTO INVULLEN VIA EMAIL LINK
+// AUTO INVULLEN
 const params = new URLSearchParams(window.location.search);
 const site = params.get("site");
 
 if(site){
   document.getElementById("url").value = site;
 }
-
 </script>
-
-</body>
-</html>
