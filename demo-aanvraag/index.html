@@ -39,6 +39,7 @@ h1 {
 p {
   color:#d7d7d7;
   margin-bottom:20px;
+  line-height:1.5;
 }
 
 input, textarea {
@@ -47,6 +48,7 @@ input, textarea {
   margin-bottom:14px;
   border-radius:10px;
   border:1px solid #303642;
+  font-size:15px;
 }
 
 textarea {
@@ -79,6 +81,14 @@ button:hover {
   margin-top:-8px;
   margin-bottom:12px;
 }
+
+.error {
+  color:#ff4d4d;
+  font-size:13px;
+  margin-top:-10px;
+  margin-bottom:10px;
+  display:none;
+}
 </style>
 </head>
 
@@ -91,7 +101,7 @@ button:hover {
 <h1>Gratis demo website aanvragen</h1>
 
 <p>
-Vul je gegevens in. Wij nemen contact met je op via WhatsApp of telefoon om je demo af te stemmen.
+Vul alle gegevens in. Wij nemen contact met je op via WhatsApp of telefoon om je demo af te stemmen.
 </p>
 
 <form id="demoForm" action="https://formsubmit.co/info@sitesnel24.nl" method="POST" enctype="multipart/form-data">
@@ -102,7 +112,6 @@ Vul je gegevens in. Wij nemen contact met je op via WhatsApp of telefoon om je d
 <input type="hidden" name="_next" value="https://sitesnel24.nl/bedankt/">
 
 <input type="text" name="_honey" style="display:none">
-
 <input type="hidden" id="whatsappLink" name="WhatsApp link" value="">
 
 <input type="text" name="Bedrijfsnaam" placeholder="Bedrijfsnaam" required>
@@ -112,22 +121,30 @@ Vul je gegevens in. Wij nemen contact met je op via WhatsApp of telefoon om je d
   type="tel" 
   id="telefoon"
   name="Telefoon" 
-  placeholder="Telefoonnummer (voor WhatsApp contact)" 
+  placeholder="06 12345678 of +31 6 12345678" 
   required
 >
+
+<div id="phoneError" class="error">
+Voer een geldig Nederlands telefoonnummer in.
+</div>
 
 <div class="note">
 Wij gebruiken dit nummer om je snel te kunnen bereiken over je demo.
 </div>
 
-<input type="email" name="Email" placeholder="E-mailadres (optioneel)">
+<input type="email" name="Email" placeholder="E-mailadres" required>
 
 <textarea name="Beschrijving" placeholder="Wat doet jouw bedrijf en wat bied je aan?" required></textarea>
 
-<label>Upload foto's (max 3):</label>
-<input type="file" name="foto1" accept="image/*">
-<input type="file" name="foto2" accept="image/*">
-<input type="file" name="foto3" accept="image/*">
+<label>Upload foto 1</label>
+<input type="file" name="foto1" accept="image/*" required>
+
+<label>Upload foto 2</label>
+<input type="file" name="foto2" accept="image/*" required>
+
+<label>Upload foto 3</label>
+<input type="file" name="foto3" accept="image/*" required>
 
 <div class="checkbox">
 <label>
@@ -143,11 +160,22 @@ Wij gebruiken dit nummer om je snel te kunnen bereiken over je demo.
 </div>
 
 <script>
-document.getElementById("demoForm").addEventListener("submit", function() {
+document.getElementById("demoForm").addEventListener("submit", function(e) {
+
   let telefoon = document.getElementById("telefoon").value;
 
   telefoon = telefoon.replace(/\s+/g, "");
   telefoon = telefoon.replace(/-/g, "");
+
+  const regex = /^(06\d{8}|316\d{8}|\+316\d{8})$/;
+
+  if (!regex.test(telefoon)) {
+    e.preventDefault();
+    document.getElementById("phoneError").style.display = "block";
+    return;
+  }
+
+  document.getElementById("phoneError").style.display = "none";
 
   if (telefoon.startsWith("06")) {
     telefoon = "31" + telefoon.substring(1);
