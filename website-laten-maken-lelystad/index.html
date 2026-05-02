@@ -4,144 +4,373 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Website laten maken in Lelystad | SiteSnel24</title>
-<meta name="description" content="Website laten maken in Lelystad? SiteSnel24 maakt snelle websites voor kleine ondernemers vanaf €150. Gericht op Google, mobiel en WhatsApp.">
+<title>Website laten maken Lelystad | Vanaf €150 | SiteSnel24</title>
+<meta name="description" content="Website laten maken in Lelystad? SiteSnel24 maakt snelle, duidelijke websites vanaf €150 voor kleine ondernemers. Gericht op Google, mobiel en WhatsApp.">
+<meta name="theme-color" content="#10b981">
+<link rel="canonical" href="https://sitesnel24.nl/website-laten-maken-lelystad/">
 
 <style>
-body {
-  margin:0;
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --green:#10b981;
+  --green-dark:#059669;
+  --dark:#0f172a;
+  --card:#1e293b;
+  --text:#f8fafc;
+  --muted:#cbd5e1;
+  --soft:#94a3b8;
+  --border:#334155;
+  --red:#ef4444;
+}
+
+html{scroll-behavior:smooth}
+
+body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#0f172a;
-  color:#cbd5e1;
+  background:var(--dark);
+  color:var(--muted);
   line-height:1.6;
 }
 
-.container {
-  max-width:960px;
+.container{
+  max-width:1050px;
   margin:0 auto;
-  padding:40px 20px;
+  padding:0 20px;
 }
 
-.logo {
-  color:#10b981;
+header{
+  padding:22px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:#0b1220;
+}
+
+.logo{
+  color:var(--green);
   font-size:28px;
   font-weight:900;
-  margin-bottom:50px;
   text-align:center;
 }
 
-.hero {
+.hero{
   text-align:center;
-  padding:50px 0;
+  padding:76px 0 56px;
 }
 
-h1 {
-  color:#f8fafc;
-  font-size:42px;
-  line-height:1.15;
-  margin-bottom:20px;
-}
-
-p {
-  color:#94a3b8;
-  font-size:18px;
-}
-
-.box {
-  background:#1e293b;
-  border:1px solid #334155;
-  border-radius:18px;
-  padding:30px;
-  margin:30px 0;
-}
-
-.btn {
+.badge{
   display:inline-block;
-  background:#10b981;
-  color:#062019;
-  padding:16px 26px;
+  padding:8px 15px;
+  margin-bottom:22px;
+  border-radius:999px;
+  background:rgba(16,185,129,.08);
+  border:1px solid rgba(16,185,129,.35);
+  color:var(--green);
+  font-weight:900;
+  font-size:14px;
+}
+
+h1{
+  max-width:900px;
+  margin:0 auto 20px;
+  color:var(--text);
+  font-size:42px;
+  line-height:1.12;
+}
+
+.hero p{
+  max-width:760px;
+  margin:0 auto 18px;
+  color:var(--soft);
+  font-size:19px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:15px 26px;
   border-radius:12px;
+  background:var(--green);
+  color:#062019;
+  text-decoration:none;
+  font-weight:900;
+  margin-top:22px;
+  transition:.2s ease;
+}
+
+.btn:hover{
+  background:var(--green-dark);
+  transform:translateY(-2px);
+}
+
+.section{
+  padding:48px 0;
+}
+
+.box{
+  background:linear-gradient(180deg,var(--card),#182235);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:34px;
+  margin-bottom:26px;
+}
+
+.box h2{
+  color:var(--text);
+  font-size:28px;
+  margin-bottom:14px;
+}
+
+.box p{
+  color:var(--soft);
+  margin-bottom:12px;
+}
+
+.highlight{
+  border:1px solid rgba(239,68,68,.45);
+  background:linear-gradient(135deg,rgba(239,68,68,.12),#1e293b);
+}
+
+.grid{
+  display:grid;
+  gap:22px;
+}
+
+@media(min-width:760px){
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  h1{
+    font-size:56px;
+  }
+}
+
+ul{
+  list-style:none;
+  display:grid;
+  gap:12px;
+  margin-top:18px;
+}
+
+li{
+  position:relative;
+  padding-left:30px;
+  color:var(--muted);
+}
+
+li:before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:var(--green);
+  font-weight:900;
+}
+
+.price{
+  color:var(--green);
+  font-size:42px;
+  font-weight:900;
+  margin:12px 0;
+}
+
+.cta{
+  text-align:center;
+  background:linear-gradient(135deg,#1e293b,#111c2f);
+  border:1px solid rgba(16,185,129,.35);
+  border-radius:24px;
+  padding:46px 28px;
+}
+
+.cta h2{
+  color:var(--text);
+  font-size:34px;
+  margin-bottom:14px;
+}
+
+.cta p{
+  max-width:680px;
+  margin:0 auto 14px;
+  color:var(--soft);
+}
+
+.whatsapp{
+  background:#25d366;
+  color:white;
+}
+
+.whatsapp:hover{
+  background:#1ebe5d;
+}
+
+.email{
+  margin-top:18px;
+  color:var(--soft);
+  font-size:14px;
+}
+
+.email a{
+  color:var(--green);
   font-weight:900;
   text-decoration:none;
-  margin-top:20px;
 }
 
-ul {
-  color:#cbd5e1;
-}
-
-li {
-  margin-bottom:10px;
-}
-
-footer {
-  border-top:1px solid #334155;
-  margin-top:60px;
-  padding-top:30px;
+footer{
+  padding:36px 0;
+  border-top:1px solid rgba(255,255,255,.08);
   text-align:center;
-  color:#94a3b8;
+  color:var(--soft);
   font-size:14px;
+}
+
+footer a{
+  color:var(--green);
+  text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+  <div class="container">
+    <div class="logo">SiteSnel24</div>
+  </div>
+</header>
 
-<div class="logo">SiteSnel24</div>
+<main>
 
 <section class="hero">
-  <h1>Website laten maken in Lelystad</h1>
+  <div class="container">
+    <span class="badge">Voor ondernemers in Lelystad</span>
 
-  <p>
-    Bent u ondernemer in Lelystad en wilt u een snelle, professionele website
-    die klanten oplevert via Google en WhatsApp?
-  </p>
+    <h1>Website laten maken in Lelystad</h1>
 
-  <a class="btn" href="/funnel.html">
-    Controleer uw website
-  </a>
+    <p>
+      Meer klanten via Google en WhatsApp? SiteSnel24 maakt snelle, duidelijke websites voor kleine ondernemers.
+    </p>
+
+    <p>
+      Geen dure praat, geen ingewikkeld traject. Gewoon een professionele website die doet wat hij moet doen: aanvragen opleveren.
+    </p>
+
+    <a class="btn" href="/analyse.html">
+      Controleer uw website gratis
+    </a>
+  </div>
 </section>
 
-<div class="box">
-  <h2>Waarom een snelle website belangrijk is</h2>
-  <p>
-    Veel kleine ondernemers hebben een website die traag laadt op mobiel.
-    Dat kan klanten kosten. Bezoekers klikken sneller weg en Google geeft
-    snelle websites vaak een betere kans in de zoekresultaten.
-  </p>
-</div>
+<section class="section">
+  <div class="container">
 
-<div class="box">
-  <h2>Wat wij maken</h2>
-  <ul>
-    <li>Snelle landingspagina vanaf €150</li>
-    <li>Mobielvriendelijk ontwerp</li>
-    <li>WhatsApp contactknoppen</li>
-    <li>Basis SEO voor lokale vindbaarheid</li>
-    <li>Geschikt voor zzp en kleine ondernemers in Lelystad</li>
-  </ul>
-</div>
+    <div class="box highlight">
+      <h2>Een trage website kost klanten</h2>
+      <p>
+        Bezoekers wachten niet. Als uw website langzaam opent op mobiel,
+        klikken mensen vaak weg voordat ze bellen, appen of een formulier invullen.
+      </p>
+      <p>
+        Dat betekent: minder aanvragen, minder vertrouwen en mogelijk gemiste omzet.
+      </p>
+    </div>
 
-<div class="box">
-  <h2>Website laten maken of sneller maken?</h2>
-  <p>
-    Heeft u nog geen website? Dan maken wij een nieuwe.
-    Heeft u al een website maar is deze traag? Dan kijken we eerst wat er misgaat.
-  </p>
+    <div class="box">
+      <h2>Snelle websites scoren beter in Google</h2>
+      <p>
+        Google kijkt naar gebruiksvriendelijkheid en snelheid. Vooral op mobiel.
+        Een snelle website geeft u een betere basis om lokaal gevonden te worden.
+      </p>
 
-  <a class="btn" href="/funnel.html">
-    Start gratis website check
-  </a>
-</div>
+      <ul>
+        <li>Beter vindbaar bij lokale zoekopdrachten</li>
+        <li>Meer vertrouwen bij bezoekers</li>
+        <li>Meer aanvragen via WhatsApp, telefoon of e-mail</li>
+      </ul>
+    </div>
+
+    <div class="grid">
+      <div class="box">
+        <h2>Website laten maken</h2>
+        <div class="price">vanaf €150</div>
+        <p>
+          Ideaal voor zzp'ers en kleine bedrijven in Lelystad die snel professioneel online willen staan.
+        </p>
+
+        <ul>
+          <li>Snelle landingspagina</li>
+          <li>Mobielvriendelijk ontwerp</li>
+          <li>WhatsApp contactknop</li>
+          <li>Basis SEO structuur</li>
+          <li>Duidelijke tekst gericht op klanten</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Website sneller maken</h2>
+        <p>
+          Heeft u al een website, maar laadt deze traag of scoort hij slecht op mobiel?
+          Dan kijken we eerst wat er misgaat.
+        </p>
+
+        <ul>
+          <li>Google PageSpeed check</li>
+          <li>Advies of optimaliseren zinvol is</li>
+          <li>Afbeeldingen en code verbeteren</li>
+          <li>Eerlijk advies als opnieuw bouwen slimmer is</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>Voor wie is dit bedoeld?</h2>
+      <p>
+        Deze oplossing is vooral geschikt voor kleine ondernemers in Lelystad die geen grote, dure website nodig hebben,
+        maar wel professioneel gevonden willen worden.
+      </p>
+
+      <ul>
+        <li>Kappers</li>
+        <li>Schoonmakers</li>
+        <li>Loodgieters</li>
+        <li>Schilders</li>
+        <li>Restaurants en lokale dienstverleners</li>
+      </ul>
+    </div>
+
+    <div class="cta">
+      <h2>Twijfelt u wat u nodig heeft?</h2>
+      <p>
+        Controleer gratis uw website. Dan ziet u direct of snelheid een probleem kan zijn.
+      </p>
+
+      <a class="btn" href="/analyse.html">
+        Start gratis website check
+      </a>
+
+      <br>
+
+      <a class="btn whatsapp" href="https://wa.me/31646950301?text=Hoi%2C%20ik%20wil%20graag%20informatie%20over%20een%20website%20laten%20maken%20in%20Lelystad." target="_blank">
+        Direct contact via WhatsApp
+      </a>
+
+      <div class="email">
+        Liever mailen?
+        <a href="mailto:info@sitesnel24.nl?subject=Website laten maken Lelystad">info@sitesnel24.nl</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
 
 <footer>
-  <p>SiteSnel24.nl - Websites voor kleine ondernemers</p>
-  <p><a href="/privacy.html" style="color:#10b981;">Privacyverklaring</a></p>
+  <div class="container">
+    <p><strong>SiteSnel24.nl</strong> - Websites voor kleine ondernemers</p>
+    <p><a href="/privacy.html">Privacyverklaring</a></p>
+  </div>
 </footer>
-
-</div>
 
 </body>
 </html>
