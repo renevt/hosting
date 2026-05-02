@@ -1,26 +1,147 @@
-import os
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-steden = [
-    "almere",
-    "amsterdam",
-    "utrecht",
-    "rotterdam",
-    "den-haag",
-    "lelystad",
-    "zeewolde",
-    "harderwijk"
-]
+<title>Website laten maken in Zeewolde | SiteSnel24</title>
+<meta name="description" content="Website laten maken in Zeewolde? SiteSnel24 maakt snelle websites voor kleine ondernemers vanaf €150. Gericht op Google, mobiel en WhatsApp.">
 
-with open("seo_template.html", "r", encoding="utf-8") as f:
-    template = f.read()
+<style>
+body {
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#0f172a;
+  color:#cbd5e1;
+  line-height:1.6;
+}
 
-for stad in steden:
-    mapnaam = f"website-laten-maken-{stad}"
-    os.makedirs(mapnaam, exist_ok=True)
+.container {
+  max-width:960px;
+  margin:0 auto;
+  padding:40px 20px;
+}
 
-    html = template.replace("Zeewolde", stad.capitalize())
+.logo {
+  color:#10b981;
+  font-size:28px;
+  font-weight:900;
+  margin-bottom:50px;
+  text-align:center;
+}
 
-    with open(f"{mapnaam}/index.html", "w", encoding="utf-8") as f:
-        f.write(html)
+.hero {
+  text-align:center;
+  padding:50px 0;
+}
 
-print("Alle pagina's aangemaakt!")
+h1 {
+  color:#f8fafc;
+  font-size:42px;
+  line-height:1.15;
+  margin-bottom:20px;
+}
+
+p {
+  color:#94a3b8;
+  font-size:18px;
+}
+
+.box {
+  background:#1e293b;
+  border:1px solid #334155;
+  border-radius:18px;
+  padding:30px;
+  margin:30px 0;
+}
+
+.btn {
+  display:inline-block;
+  background:#10b981;
+  color:#062019;
+  padding:16px 26px;
+  border-radius:12px;
+  font-weight:900;
+  text-decoration:none;
+  margin-top:20px;
+}
+
+ul {
+  color:#cbd5e1;
+}
+
+li {
+  margin-bottom:10px;
+}
+
+footer {
+  border-top:1px solid #334155;
+  margin-top:60px;
+  padding-top:30px;
+  text-align:center;
+  color:#94a3b8;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">SiteSnel24</div>
+
+<section class="hero">
+  <h1>Website laten maken in Zeewolde</h1>
+
+  <p>
+    Bent u ondernemer in Zeewolde en wilt u een snelle, professionele website
+    die klanten oplevert via Google en WhatsApp?
+  </p>
+
+  <a class="btn" href="/funnel.html">
+    Controleer uw website
+  </a>
+</section>
+
+<div class="box">
+  <h2>Waarom een snelle website belangrijk is</h2>
+  <p>
+    Veel kleine ondernemers hebben een website die traag laadt op mobiel.
+    Dat kan klanten kosten. Bezoekers klikken sneller weg en Google geeft
+    snelle websites vaak een betere kans in de zoekresultaten.
+  </p>
+</div>
+
+<div class="box">
+  <h2>Wat wij maken</h2>
+  <ul>
+    <li>Snelle landingspagina vanaf €150</li>
+    <li>Mobielvriendelijk ontwerp</li>
+    <li>WhatsApp contactknoppen</li>
+    <li>Basis SEO voor lokale vindbaarheid</li>
+    <li>Geschikt voor zzp en kleine ondernemers in Zeewolde</li>
+  </ul>
+</div>
+
+<div class="box">
+  <h2>Website laten maken of sneller maken?</h2>
+  <p>
+    Heeft u nog geen website? Dan maken wij een nieuwe.
+    Heeft u al een website maar is deze traag? Dan kijken we eerst wat er misgaat.
+  </p>
+
+  <a class="btn" href="/funnel.html">
+    Start gratis website check
+  </a>
+</div>
+
+<footer>
+  <p>SiteSnel24.nl - Websites voor kleine ondernemers</p>
+  <p><a href="/privacy.html" style="color:#10b981;">Privacyverklaring</a></p>
+</footer>
+
+</div>
+
+</body>
+</html>
