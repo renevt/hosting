@@ -89,6 +89,10 @@ button:hover { background:#1ebe5d; }
   margin-bottom:15px;
   line-height:1.5;
 }
+
+.small a {
+  color:#25D366;
+}
 </style>
 </head>
 
@@ -113,13 +117,15 @@ Vul alle gegevens in. Wij nemen contact met u op via WhatsApp of telefoon om uw 
 
 <input type="text" name="_honey" style="display:none">
 
+<input type="hidden" name="Toestemming omschrijving" value="Klant geeft toestemming voor contact via WhatsApp of telefoon over de demo aanvraag">
+
 <input type="text" name="Bedrijfsnaam" placeholder="Bedrijfsnaam" required>
 <input type="text" name="Naam" placeholder="Naam" required>
 
 <input type="tel" name="Telefoon" placeholder="06 12345678" required>
 
 <div class="note">
-Wij gebruiken dit nummer om u snel te kunnen bereiken.
+Wij gebruiken dit nummer om u snel te kunnen bereiken over uw demo.
 </div>
 
 <input type="email" name="Email" placeholder="E-mailadres" required>
@@ -127,24 +133,24 @@ Wij gebruiken dit nummer om u snel te kunnen bereiken.
 <textarea name="Beschrijving" placeholder="Wat doet uw bedrijf en wat biedt u aan?" required></textarea>
 
 <label>Upload foto 1</label>
-<input type="file" name="foto1" required>
+<input type="file" name="foto1" accept="image/*" required>
 
 <label>Upload foto 2</label>
-<input type="file" name="foto2" required>
+<input type="file" name="foto2" accept="image/*" required>
 
 <label>Upload foto 3</label>
-<input type="file" name="foto3" required>
+<input type="file" name="foto3" accept="image/*" required>
 
 <div class="checkbox">
 <label>
-<input type="checkbox" name="Toestemming" value="Ja" required>
- Ik ga ermee akkoord dat SiteSnel24 contact met mij kan opnemen via WhatsApp of telefoon.
+<input type="checkbox" name="Akkoord WhatsApp/telefoon contact" value="Ja" required>
+ Ik ga ermee akkoord dat SiteSnel24 contact met mij opneemt via WhatsApp of telefoon over mijn demo aanvraag.
 </label>
 </div>
 
 <p class="small">
-Door het versturen van dit formulier gaat u akkoord met onze 
-<a href="/privacy.html" style="color:#25D366;">privacyverklaring</a>.
+Door het versturen van dit formulier gaat u akkoord met onze
+<a href="/privacy.html">privacyverklaring</a>.
 </p>
 
 <button type="submit">Vraag gratis demo aan</button>
