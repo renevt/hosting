@@ -6,28 +6,41 @@
 
 <title>Bedankt | SiteSnel24</title>
 
-<!-- Automatische redirect na 3 seconden -->
-<meta http-equiv="refresh" content="3;url=https://sitesnel24.nl/">
+<meta http-equiv="refresh" content="10;url=https://sitesnel24.nl/">
 
 <style>
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
   background: #0f1115;
   color: #ffffff;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 20px;
 }
 
 .box {
   background: #181b22;
   padding: 35px;
-  border-radius: 15px;
+  border-radius: 18px;
   text-align: center;
-  max-width: 420px;
+  max-width: 460px;
+  width: 100%;
   box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.logo {
+  color: #25D366;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 18px;
 }
 
 h1 {
@@ -38,23 +51,26 @@ h1 {
 p {
   margin-bottom: 15px;
   line-height: 1.6;
+  color: #d7d7d7;
 }
 
-a.button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 20px;
+.button {
+  display: block;
+  margin-top: 18px;
+  padding: 14px 20px;
   background: #25D366;
   color: #fff;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
-a.link {
+.link {
   color: #25D366;
   text-decoration: none;
   display: block;
   margin-top: 15px;
+  font-size: 14px;
 }
 </style>
 </head>
@@ -63,23 +79,25 @@ a.link {
 
 <div class="box">
 
-  <h1>Bedankt!</h1>
+  <div class="logo">SiteSnel24</div>
+
+  <h1>Bedankt voor uw aanvraag</h1>
 
   <p>
-    Bedankt voor uw aanvraag.<br>
+    Uw aanvraag is goed ontvangen.<br>
     We gaan direct aan de slag met uw demo website.
   </p>
 
   <p>
-    U wordt automatisch omgeleid naar onze website.
+    U wordt automatisch doorgestuurd naar onze website.
   </p>
 
-  <a class="button" href="https://wa.me/31646950301">
+  <a class="button" href="https://wa.me/31646950301" target="_blank">
     Direct contact via WhatsApp
   </a>
 
   <a class="link" href="https://sitesnel24.nl/">
-    Of klik hier als u niet wordt doorgestuurd
+    Klik hier als u niet automatisch wordt doorgestuurd
   </a>
 
 </div>
