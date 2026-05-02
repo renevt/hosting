@@ -39,7 +39,6 @@ h1 {
 p {
   color:#d7d7d7;
   margin-bottom:20px;
-  line-height:1.5;
 }
 
 input, textarea {
@@ -89,6 +88,12 @@ button:hover {
   margin-bottom:10px;
   display:none;
 }
+
+.small {
+  font-size:12px;
+  color:#aaa;
+  margin-top:10px;
+}
 </style>
 </head>
 
@@ -101,7 +106,7 @@ button:hover {
 <h1>Gratis demo website aanvragen</h1>
 
 <p>
-Vul alle gegevens in. Wij nemen contact met je op via WhatsApp of telefoon om je demo af te stemmen.
+Vul alle gegevens in. Wij nemen contact met u op via WhatsApp of telefoon om uw demo te bespreken.
 </p>
 
 <form id="demoForm" action="https://formsubmit.co/info@sitesnel24.nl" method="POST" enctype="multipart/form-data">
@@ -130,12 +135,12 @@ Voer een geldig Nederlands telefoonnummer in.
 </div>
 
 <div class="note">
-Wij gebruiken dit nummer om je snel te kunnen bereiken over je demo.
+Wij gebruiken dit nummer om u snel te kunnen bereiken over uw demo.
 </div>
 
 <input type="email" name="Email" placeholder="E-mailadres" required>
 
-<textarea name="Beschrijving" placeholder="Wat doet jouw bedrijf en wat bied je aan?" required></textarea>
+<textarea name="Beschrijving" placeholder="Wat doet uw bedrijf en wat biedt u aan?" required></textarea>
 
 <label>Upload foto 1</label>
 <input type="file" name="foto1" accept="image/*" required>
@@ -149,9 +154,14 @@ Wij gebruiken dit nummer om je snel te kunnen bereiken over je demo.
 <div class="checkbox">
 <label>
 <input type="checkbox" name="Toestemming contact" value="Ja" required>
- Ik ga ermee akkoord dat SiteSnel24 contact met mij opneemt via WhatsApp of telefoon over mijn aanvraag.
+ Ik ga ermee akkoord dat SiteSnel24 contact met mij kan opnemen via WhatsApp of telefoon om mijn aanvraag te bespreken.
 </label>
 </div>
+
+<p class="small">
+Door het versturen van dit formulier gaat u akkoord met onze 
+<a href="/privacy.html" style="color:#25D366;">privacyverklaring</a>.
+</p>
 
 <button type="submit">Vraag gratis demo aan</button>
 
