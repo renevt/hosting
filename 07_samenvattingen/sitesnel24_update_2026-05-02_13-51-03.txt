@@ -1,0 +1,24 @@
+SITESNEL24 - UPDATE
+Datum: 02-05-2026 13:51
+
+GELEZEN
+
+UPDATE:
+SiteSnel24 samenvatting
+
+Structuur:
+index.html = homepage
+funnel.html = email funnel
+analyse.html = score pagina
+privacy.html = privacy
+
+Flow:
+Email -> funnel -> PageSpeed -> analyse
+Google -> homepage -> funnel (via knop)
+
+Actie:
+Link "Website sneller maken" in index.html aanpassen naar /funnel.html
+
+Belangrijk:
+Funnel nooit als index gebruiken
+Alles gescheiden houden

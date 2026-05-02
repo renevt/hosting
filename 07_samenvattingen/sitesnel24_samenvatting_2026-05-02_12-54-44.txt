@@ -1,0 +1,110 @@
+SITESNEL24 - SAMENVATTING
+Datum: 02-05-2026 12:54
+
+SITESNEL24 - MASTER SAMENVATTING
+
+GELEZEN
+
+DOEL:
+Automatisch bedrijven vinden met trage websites en deze omzetten naar klanten via een slimme, gestuurde funnel.
+
+KERN IDEE:
+Wij weten vooraf dat een website traag is via het Python script.
+De klant bevestigt dit zelf via Google PageSpeed.
+Daarna sturen wij hem naar de juiste keuze, met nadruk op nieuwe website laten maken.
+
+FLOW:
+1. Python script scant Google Business
+2. Script haalt bedrijfsnaam, website en e-mailadres op
+3. Website wordt getest met PageSpeed API mobiel
+4. Score wordt opgeslagen
+5. Score onder 60 = lead
+6. Lead krijgt e-mail met persoonlijke link
+
+PERSOONLIJKE LINK:
+https://sitesnel24.nl/?site=bedrijf.nl&score=XX
+
+WEBSITE LOGICA:
+
+NORMALE BEZOEKER:
+- Ziet standaard homepage
+- Kan website testen via Google PageSpeed
+- Ziet algemene uitleg en keuzes
+
+LEAD VIA MAIL:
+- Komt binnen met website ingevuld
+- Score is bekend via URL
+- Klikt op Analyseren
+- Google PageSpeed opent in nieuw tabblad
+- SiteSnel24 slaat op dat gebruiker getest heeft
+- Klant bekijkt score bij Google
+- Klant keert terug naar SiteSnel24 tabblad
+
+TERUGKOMST:
+- Website detecteert dat gebruiker getest heeft
+- Score is bekend
+- Homepage wordt verborgen
+- Resultaatpagina wordt getoond
+
+RESULTAATPAGINA:
+- Toont website van klant
+- Toont score, bijvoorbeeld 38 / 100
+- Kleur:
+  - onder 50 = rood
+  - 50 tot 80 = oranje
+  - boven 80 = groen
+
+CONVERSIE:
+2 keuzes:
+
+1. Nieuwe website laten maken - AANBEVOLEN
+- Voor trage of verouderde websites
+- Vaak goedkoper en beter dan aanpassen
+
+2. Website sneller maken
+- Voor technisch goede websites
+- Kleine optimalisaties
+
+PSYCHOLOGIE:
+- Klant ziet slechte score bij Google
+- Klant komt terug en ziet dezelfde score op SiteSnel24
+- Vertrouwen ontstaat
+- Aanbevolen stuurt beslissing
+- Klant kiest zelf zonder push
+
+BELANGRIJK:
+- Website meet geen score zelf
+- Score komt uit Python script
+- Score wordt meegestuurd via URL met ?score=XX
+
+TECHNIEK:
+- URL parameters: site en score
+- localStorage detecteert dat gebruiker getest heeft
+- JavaScript verbergt homepage en toont resultaatpagina
+- Links nemen site en score mee naar vervolgsites
+
+STRUCTUUR:
+Downloads\SiteSnel24\
+Downloads\SiteSnel24\07_samenvattingen\
+
+BESTANDEN:
+- sitesnel24_samenvatting_datum.txt
+- sitesnel24_samenvatting_laatst.txt
+
+WERKWIJZE:
+- Python script = data en leads
+- Website = funnel en conversie
+- ChatGPT = optimalisatie
+- Samenvatting = geheugen van systeem
+
+STATUS:
+- Website werkt
+- PageSpeed flow werkt
+- Terugkomst detectie werkt
+- Score weergave werkt
+- Conversie blok werkt
+- Funnel operationeel
+
+CONCLUSIE:
+DATA -> SCORE -> MAIL -> TEST -> BEWIJS -> TERUGKOMST -> KEUZE -> CONVERSIE
+

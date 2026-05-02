@@ -1,0 +1,71 @@
+SITESNEL24 - UPDATE
+Datum: 02-05-2026 13:00
+
+GELEZEN
+
+UPDATE:
+SITESNEL24 - NIEUWE SAMENVATTING
+
+GELEZEN
+
+DOEL:
+SiteSnel24 wordt gebouwd als een slimme lead-funnel voor ondernemers met trage of verouderde websites.
+
+HOOFDIDEE:
+Het Python script test websites vooraf met PageSpeed.
+Als een website laag scoort, krijgt de ondernemer een e-mail met persoonlijke link.
+
+PERSOONLIJKE LINK:
+https://sitesnel24.nl/?site=bedrijf.nl&score=XX
+
+WEBSITE FLOW:
+1. Lead komt via e-mail op SiteSnel24
+2. Websiteadres staat automatisch ingevuld
+3. Score is bekend via URL
+4. Lead klikt op "Analyseren"
+5. Google PageSpeed opent in nieuw tabblad
+6. SiteSnel24 onthoudt dat de lead getest heeft
+7. Lead komt terug naar SiteSnel24
+8. Normale homepage verdwijnt
+9. Resultaatpagina verschijnt met score
+
+RESULTAATPAGINA:
+- Toont website van klant
+- Toont score, bijvoorbeeld 38 / 100
+- Scorekleur:
+  - onder 50 = rood
+  - 50 tot 80 = oranje
+  - boven 80 = groen
+
+CONVERSIE:
+De resultaatpagina stuurt naar 2 opties:
+
+1. Nieuwe website laten maken - AANBEVOLEN
+Voor trage of verouderde websites waarbij aanpassen vaak duurder is dan opnieuw bouwen.
+
+2. Website sneller maken
+Voor websites die technisch nog goed zijn en alleen optimalisatie nodig hebben.
+
+BELANGRIJK:
+- SiteSnel24 meet de score niet live
+- Score komt uit het Python script
+- Google PageSpeed is het bewijs voor de klant
+- SiteSnel24 gebruikt de bekende score om de keuze te sturen
+
+LOGGING:
+- Automatische logging werkt
+- Samenvattingen worden opgeslagen in:
+  Downloads\SiteSnel24\07_samenvattingen
+- Laatste samenvatting wordt bijgewerkt als:
+  sitesnel24_samenvatting_laatst.txt
+
+STATUS:
+- Website funnel werkt
+- PageSpeed opent goed
+- Terugkomst-flow werkt
+- Scorepagina werkt
+- Aanbevolen-keuze werkt
+- Logging werkt
+
+VOLGENDE STAP:
+Eerste echte leads testen met e-mailcampagne en kijken of ondernemers klikken, terugkomen en reageren.

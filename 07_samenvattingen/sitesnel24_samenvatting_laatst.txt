@@ -1,0 +1,48 @@
+SITESNEL24 - UPDATE
+Datum: 02-05-2026 19:47
+
+GELEZEN
+
+UPDATE:
+SiteSnel24 samenvatting
+
+STRUCTUUR
+index.html     = homepage (Google bezoekers)
+funnel.html    = funnel pagina (via e-mail en knop)
+analyse.html   = resultaat pagina met score
+privacy.html   = privacyverklaring
+
+FLOW
+
+Email klant:
+- Klikt op link
+- Komt op funnel.html?site=klantwebsite.nl
+- Doet test via PageSpeed
+- Komt terug op analyse.html met score en keuze
+
+Google klant:
+- Komt op index.html
+- Scrollt naar "Website sneller maken"
+- Gaat naar funnel.html
+
+AANPASSING
+
+In index.html:
+Zoek de knop "Website sneller maken"
+Verander de link naar:
+
+href="/funnel.html"
+
+BELANGRIJK
+
+- Homepage mag GEEN funnel zijn
+- Funnel alleen gebruiken via e-mail en knop
+- Analyse alleen tonen na test
+- Alles gescheiden houden
+
+RESULTAAT
+
+- Duidelijke klant flow
+- Meer conversie
+- Geen verwarring
+KLAAR
