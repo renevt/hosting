@@ -214,11 +214,29 @@ header{
   text-decoration:none;
   display:block;
   transition:.25s ease;
+  position:relative;
 }
 
 .choice-card:hover{
   border-color:var(--primary);
   transform:translateY(-4px);
+}
+
+.choice-card.recommended{
+  border-color:var(--primary);
+  background:linear-gradient(135deg,rgba(16,185,129,.16),var(--bg-card));
+}
+
+.choice-badge{
+  display:none;
+  background:#062019;
+  color:#10b981;
+  border:1px solid rgba(16,185,129,.4);
+  padding:5px 11px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:12px;
 }
 
 .choice-icon{
@@ -415,6 +433,7 @@ footer a{
       </a>
 
       <a href="#" class="choice-card" id="nieuweLink">
+        <span class="choice-badge" id="newBadge">aanbevolen</span>
         <div class="choice-icon">🌐</div>
         <h3>Nieuwe website laten maken</h3>
         <p>Start met een snelle, professionele website vanaf €150.</p>
@@ -546,6 +565,19 @@ function updateLossSimulation(score){
   document.getElementById("lossIntro").textContent = text;
 }
 
+function updateRecommendation(score){
+  const newBadge = document.getElementById("newBadge");
+  const newCard = document.getElementById("nieuweLink");
+
+  if(score !== null && score < 50){
+    newBadge.style.display = "inline-block";
+    newCard.classList.add("recommended");
+  } else {
+    newBadge.style.display = "none";
+    newCard.classList.remove("recommended");
+  }
+}
+
 function updatePage(){
   const params = new URLSearchParams(window.location.search);
 
@@ -602,6 +634,7 @@ function updatePage(){
 
   adviceText.textContent = getAdviceText(score);
   updateLossSimulation(score);
+  updateRecommendation(score);
 
   const encodedSite = encodeURIComponent(site);
   const scoreParam = score !== null ? "&score=" + encodeURIComponent(score) : "";
