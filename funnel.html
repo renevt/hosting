@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SiteSnel24 | Website sneller maken</title>
-<meta name="description" content="Website traag op mobiel? Test uw website via Google PageSpeed en kies daarna of u uw website sneller wilt laten maken of opnieuw wilt laten bouwen.">
+<meta name="description" content="Website traag op mobiel? Test uw website via Google PageSpeed en kies daarna of sneller maken of opnieuw bouwen slimmer is.">
 <meta name="theme-color" content="#10b981">
 
 <style>
@@ -77,15 +77,9 @@ nav{
   .nav-links{display:flex}
 }
 
-section{
-  padding:78px 0;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-
 .speed-check{
   padding:70px 0 64px;
   background:linear-gradient(135deg,#0f172a,#111c2f);
-  border-top:none;
 }
 
 .speed-box{
@@ -156,7 +150,8 @@ section{
 }
 
 .choice-box,
-.proof-box{
+.proof-box,
+.cta-box{
   max-width:920px;
   margin:36px auto 0;
   background:linear-gradient(180deg,var(--card),#182235);
@@ -167,7 +162,8 @@ section{
 }
 
 .choice-box h2,
-.proof-box h2{
+.proof-box h2,
+.cta-box h2{
   color:var(--text);
   font-size:26px;
   margin-bottom:12px;
@@ -175,7 +171,8 @@ section{
 }
 
 .choice-box p,
-.proof-box p{
+.proof-box p,
+.cta-box p{
   color:var(--soft);
   margin-bottom:26px;
   text-align:center;
@@ -201,6 +198,7 @@ section{
   border:1px solid var(--border);
   background:#0f172a;
   transition:.2s ease;
+  position:relative;
 }
 
 .choice-card:hover{
@@ -221,8 +219,21 @@ section{
   font-size:15px;
 }
 
-.choice-card.primary{
+.choice-card.recommended{
   background:linear-gradient(135deg,rgba(16,185,129,.18),#0f172a);
+  border-color:rgba(16,185,129,.65);
+}
+
+.recommend-label{
+  position:absolute;
+  top:-12px;
+  right:16px;
+  background:#10b981;
+  color:#062019;
+  padding:5px 11px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
 }
 
 .proof-image{
@@ -255,27 +266,6 @@ section{
   left:0;
   color:var(--green);
   font-weight:900;
-}
-
-.cta-box{
-  max-width:920px;
-  margin:0 auto;
-  text-align:center;
-  background:linear-gradient(135deg,var(--card),#111c2f);
-  border:1px solid var(--border);
-  border-radius:24px;
-  padding:50px 28px;
-}
-
-.cta-box h2{
-  color:var(--text);
-  font-size:34px;
-  margin-bottom:14px;
-}
-
-.cta-box p{
-  color:var(--soft);
-  margin-bottom:28px;
 }
 
 .btn{
@@ -358,18 +348,19 @@ footer strong{color:var(--green)}
         <h2>Wat wilt u daarna doen?</h2>
         <p>
           Is de score laag of laadt uw website traag op mobiel?
-          Kies dan hieronder de beste vervolgstap.
+          Dan is opnieuw bouwen vaak slimmer dan blijven aanpassen.
         </p>
 
         <div class="choice-grid">
-          <a class="choice-card primary" id="speedLink" href="https://websitesnellermaken.sitesnel24.nl/">
-            <strong>Website sneller maken</strong>
-            <span>Voor bestaande websites die traag laden of slecht scoren op mobiel.</span>
+          <a class="choice-card recommended" id="newSiteLink" href="https://websitelatenmaken.sitesnel24.nl/">
+            <div class="recommend-label">aanbevolen</div>
+            <strong>Nieuwe website laten maken</strong>
+            <span>Voor oude of trage websites waarbij opnieuw bouwen vaak sneller, schoner en goedkoper is dan blijven sleutelen.</span>
           </a>
 
-          <a class="choice-card" id="newSiteLink" href="https://websitelatenmaken.sitesnel24.nl/">
-            <strong>Nieuwe website laten maken</strong>
-            <span>Voor oude of trage websites waarbij opnieuw bouwen vaak slimmer is dan blijven aanpassen.</span>
+          <a class="choice-card" id="speedLink" href="https://websitesnellermaken.sitesnel24.nl/">
+            <strong>Website sneller maken</strong>
+            <span>Voor bestaande websites die technisch nog goed zijn, maar slecht scoren op mobiel.</span>
           </a>
         </div>
       </div>
@@ -381,7 +372,12 @@ footer strong{color:var(--green)}
           <strong>100 / 100 op mobiel</strong>.
         </p>
 
-        <img class="proof-image" src="images/pagespeed-sitesnel24.png" alt="PageSpeed score 100 van SiteSnel24">
+        <img
+          class="proof-image"
+          src="image/images/pagespeed-sitesnel24.png"
+          alt="PageSpeed score 100 van SiteSnel24"
+          onerror="this.onerror=null;this.src='pagespeed-100-score-website.png';"
+        >
 
         <ul class="proof-list">
           <li>Een snelle website geeft nieuwe bezoekers direct een betere eerste indruk.</li>
@@ -390,21 +386,17 @@ footer strong{color:var(--green)}
           <li>Doel: sneller laden, duidelijker contact en meer aanvragen via WhatsApp.</li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
 
-<section id="contact">
-  <div class="container">
-    <div class="cta-box">
-      <h2>Wilt u weten wat voor uw website slim is?</h2>
-      <p>
-        Stuur een WhatsApp-bericht. Dan kijken we kort met u mee en geven we eerlijk aan
-        of sneller maken of opnieuw bouwen verstandiger is.
-      </p>
-      <a class="btn" href="https://wa.me/31646950301?text=Hoi%2C%20ik%20wil%20graag%20mijn%20website%20laten%20nakijken.">
-        Stuur WhatsApp
-      </a>
+      <div class="cta-box" id="contact">
+        <h2>Wilt u weten wat voor uw website slim is?</h2>
+        <p>
+          Stuur een WhatsApp-bericht. Dan kijken we kort met u mee en geven we eerlijk aan
+          of sneller maken of opnieuw bouwen verstandiger is.
+        </p>
+        <a class="btn" href="https://wa.me/31646950301?text=Hoi%2C%20ik%20wil%20graag%20mijn%20website%20laten%20nakijken.">
+          Stuur WhatsApp
+        </a>
+      </div>
     </div>
   </div>
 </section>
